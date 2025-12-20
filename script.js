@@ -1,19 +1,25 @@
+let score = 0;
+
 function jawab(benar) {
   const popup = document.getElementById("popup");
   const title = document.getElementById("popupTitle");
   const text = document.getElementById("popupText");
+  const scoreText = document.getElementById("score");
 
   const soundBenar = document.getElementById("soundBenar");
   const soundSalah = document.getElementById("soundSalah");
 
   if (benar) {
-    title.innerHTML = "🎉 BENAR!";
-    text.innerHTML = "Hebat sekali! Kamu pintar 🌟";
+    score++;
+    scoreText.innerText = score;
+
+    title.innerHTML = "⭐ BENAR!";
+    text.innerHTML = `<span class="star">⭐</span><br>Hebat! Skormu bertambah 🎉`;
     soundBenar.currentTime = 0;
     soundBenar.play();
   } else {
     title.innerHTML = "😅 SALAH";
-    text.innerHTML = "Coba lagi ya, kamu pasti bisa!";
+    text.innerHTML = "Tidak apa-apa, coba lagi ya 💪";
     soundSalah.currentTime = 0;
     soundSalah.play();
   }
