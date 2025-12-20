@@ -122,3 +122,54 @@ footer {
     font-size: 1.05rem;
   }
 }
+
+/* POPUP OVERLAY */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: linear-gradient(135deg, #ffeb3b, #ff9800);
+  padding: 30px;
+  border-radius: 25px;
+  width: 85%;
+  max-width: 320px;
+  box-shadow: 0 10px 0 #f57c00;
+  animation: pop 0.3s ease;
+}
+
+.popup-box h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.popup-box p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ANIMASI */
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
