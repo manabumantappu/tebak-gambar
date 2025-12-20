@@ -1,32 +1,124 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
   margin: 0;
+  font-family: "Comic Sans MS", "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffeb3b, #ff9800, #ff5722);
+  min-height: 100vh;
   text-align: center;
 }
 
+/* HEADER */
 header {
-  background: #1e88e5;
-  color: white;
-  padding: 30px 15px;
+  background: linear-gradient(90deg, #ff5252, #ff9800, #ffeb3b);
+  padding: 25px 15px;
+  color: #fff;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15);
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+/* CONTAINER */
 .container {
-  margin: 40px auto;
+  max-width: 520px;
+  margin: 25px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 0 #ff9800;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 22px;
-  background: #ff9800;
+/* GAMBAR */
+.container img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: 6px solid #4caf50;
+  margin-bottom: 15px;
+}
+
+/* TEKS */
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* BUTTON */
+.btn,
+button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
   color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-size: 18px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
+/* WARNA TOMBOL VARIASI */
+button:nth-child(1) {
+  background: #2196f3;
+  box-shadow: 0 5px 0 #1565c0;
+}
+
+button:nth-child(2) {
+  background: #4caf50;
+  box-shadow: 0 5px 0 #2e7d32;
+}
+
+button:nth-child(3) {
+  background: #e91e63;
+  box-shadow: 0 5px 0 #ad1457;
+}
+
+/* ANIMASI KLIK */
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+/* LINK BUTTON */
+a.btn {
+  display: inline-block;
+  background: #9c27b0;
+  box-shadow: 0 6px 0 #6a0080;
+  text-decoration: none;
+}
+
+/* FOOTER */
 footer {
-  margin-top: 60px;
+  margin-top: 40px;
   padding: 15px;
-  font-size: 14px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+  }
 }
