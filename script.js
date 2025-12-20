@@ -1,7 +1,14 @@
 function jawab(benar) {
+  const soundBenar = document.getElementById("soundBenar");
+  const soundSalah = document.getElementById("soundSalah");
+
   if (benar) {
-    alert("✅ Benar!");
+    soundBenar.currentTime = 0;
+    soundBenar.play();
+    alert("🎉 BENAR! Pintar sekali!");
   } else {
-    alert("❌ Salah!");
+    soundSalah.currentTime = 0;
+    soundSalah.play();
+    alert("😅 Salah, coba lagi ya!");
   }
 }
