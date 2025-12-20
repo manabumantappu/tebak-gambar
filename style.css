@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  background: #1e88e5;
+  color: white;
+  padding: 30px 15px;
+}
+
+.container {
+  margin: 40px auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 15px;
+  font-size: 14px;
+}
