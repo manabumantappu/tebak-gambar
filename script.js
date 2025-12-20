@@ -27,6 +27,16 @@ function jawab(benar) {
   popup.classList.remove("hidden");
 }
 
+function aktifkanAudio() {
+  const a = document.getElementById("soundBenar");
+  if (!a) return;
+
+  a.play().then(() => {
+    a.pause();
+    a.currentTime = 0;
+  }).catch(() => {});
+}
+
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
 }
