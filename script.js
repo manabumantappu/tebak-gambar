@@ -1,7 +1,9 @@
 let score = 0;
 let indexSoal = 0;
 
-// ===== AUDIO (WEB AUDIO API) =====
+/* =====================
+   AUDIO (WEB AUDIO API)
+===================== */
 let audioCtx;
 let soundBenar, soundSalah;
 
@@ -12,13 +14,10 @@ function initAudio() {
   }
 }
 
+// 🔊 GANTI DI SINI (SUARA MP3 KAMU)
 async function loadSounds() {
-  soundBenar = await loadSound(
-    "https://assets.mixkit.co/sfx/preview/mixkit-arcade-bonus-alert-767.mp3"
-  );
-  soundSalah = await loadSound(
-    "https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3"
-  );
+  soundBenar = await loadSound("audio/benar.mp3"); // suara benar
+  soundSalah = await loadSound("audio/salah.mp3"); // suara salah
 }
 
 async function loadSound(url) {
@@ -37,23 +36,71 @@ function playSound(buffer) {
   source.start(0);
 }
 
-// ===== DATA SOAL =====
+/* =====================
+   DATA QUIZ 8 PLANET
+===================== */
 const soal = [
   {
-    gambar: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Welding_machine.jpg",
-    tanya: "Apa nama alat ini?",
-    opsi: ["旋盤", "溶接機", "モーター"],
-    benar: 1
+    gambar: "images/merkurius.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Merkurius", "Mars", "Venus"],
+    benar: 0,
+    info: "🔥 Merkurius adalah planet terdekat dari Matahari."
   },
   {
-    gambar: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Japanese_food_sushi.jpg",
-    tanya: "Ini makanan apa?",
-    opsi: ["ラーメン", "カレー", "すし"],
-    benar: 2
+    gambar: "images/venus.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Bumi", "Venus", "Jupiter"],
+    benar: 1,
+    info: "☁️ Venus adalah planet TERPANAS dengan awan tebal."
+  },
+  {
+    gambar: "images/bumi.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Mars", "Bumi", "Saturnus"],
+    benar: 1,
+    info: "🌍 Bumi adalah satu-satunya planet yang memiliki kehidupan."
+  },
+  {
+    gambar: "images/mars.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Jupiter", "Mars", "Merkurius"],
+    benar: 1,
+    info: "🔴 Mars dikenal sebagai Planet Merah."
+  },
+  {
+    gambar: "images/jupiter.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Saturnus", "Jupiter", "Neptunus"],
+    benar: 1,
+    info: "🌀 Jupiter adalah planet terbesar di Tata Surya."
+  },
+  {
+    gambar: "images/saturnus.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Saturnus", "Uranus", "Jupiter"],
+    benar: 0,
+    info: "💍 Saturnus terkenal dengan cincin yang indah."
+  },
+  {
+    gambar: "images/uranus.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Neptunus", "Uranus", "Saturnus"],
+    benar: 1,
+    info: "🧊 Uranus berputar miring dan sangat dingin."
+  },
+  {
+    gambar: "images/neptunus.jpg", // ← GANTI DI SINI
+    tanya: "🪐 Planet apakah ini?",
+    opsi: ["Jupiter", "Uranus", "Neptunus"],
+    benar: 2,
+    info: "🌊 Neptunus adalah planet terjauh dan sangat dingin."
   }
 ];
 
-// ===== TAMPILKAN SOAL =====
+/* =====================
+   TAMPILKAN SOAL
+===================== */
 function tampilSoal() {
   if (indexSoal >= soal.length) {
     selesaiGame();
@@ -76,7 +123,9 @@ function tampilSoal() {
   });
 }
 
-// ===== JAWAB =====
+/* =====================
+   JAWAB
+===================== */
 function jawab(benar) {
   initAudio();
 
@@ -85,15 +134,17 @@ function jawab(benar) {
   const text = document.getElementById("popupText");
   const scoreText = document.getElementById("score");
 
+  const infoPlanet = soal[indexSoal].info;
+
   if (benar) {
     score++;
     scoreText.innerText = score;
     title.innerHTML = "⭐ BENAR!";
-    text.innerHTML = "Hebat! +1 bintang 🎉";
+    text.innerHTML = `🎉 Hebat!<br><br>${infoPlanet}`;
     playSound(soundBenar);
   } else {
     title.innerHTML = "😅 SALAH";
-    text.innerHTML = "Coba lagi ya 💪";
+    text.innerHTML = `💡 Info Planet:<br><br>${infoPlanet}`;
     playSound(soundSalah);
   }
 
@@ -101,20 +152,45 @@ function jawab(benar) {
   indexSoal++;
 }
 
-// ===== TUTUP POPUP → LANJUT =====
+/* =====================
+   TUTUP POPUP → LANJUT
+===================== */
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
   tampilSoal();
 }
 
-// ===== SELESAI =====
+/* =====================
+   SELESAI + PREDIKAT
+===================== */
 function selesaiGame() {
-  document.getElementById("pertanyaan").innerHTML =
-    `🎉 Selesai!<br>Skor Akhir: ⭐ ${score} / ${soal.length}`;
+  let predikat = "";
+  let emoji = "";
+
+  if (score >= 7) {
+    predikat = "🏆 PINTAR SEKALI!";
+    emoji = "⭐⭐⭐";
+  } else if (score >= 5) {
+    predikat = "🎉 HEBAT!";
+    emoji = "⭐⭐";
+  } else {
+    predikat = "💪 PERLU LATIHAN LAGI";
+    emoji = "⭐";
+  }
+
+  document.getElementById("pertanyaan").innerHTML = `
+    🎉 Quiz Selesai!<br><br>
+    Skor Akhir: ${score} / ${soal.length}<br>
+    ${emoji}<br>
+    <strong>${predikat}</strong>
+  `;
+
   document.getElementById("gambar").style.display = "none";
   document.getElementById("jawaban").innerHTML =
     `<button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
 }
 
-// ===== MULAI GAME (INI YANG TADI KURANG) =====
+/* =====================
+   MULAI GAME
+===================== */
 tampilSoal();
