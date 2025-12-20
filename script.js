@@ -1,10 +1,10 @@
 let score = 0;
+let indexSoal = 0;
+
+// ===== AUDIO (WEB AUDIO API) =====
 let audioCtx;
 let soundBenar, soundSalah;
 
-/* =========================
-   INIT AUDIO (WEB AUDIO API)
-========================= */
 function initAudio() {
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -12,7 +12,6 @@ function initAudio() {
   }
 }
 
-/* LOAD SOUND */
 async function loadSounds() {
   soundBenar = await loadSound(
     "https://assets.mixkit.co/sfx/preview/mixkit-arcade-bonus-alert-767.mp3"
@@ -28,13 +27,9 @@ async function loadSound(url) {
   return await audioCtx.decodeAudioData(buffer);
 }
 
-/* PLAY SOUND */
 function playSound(buffer) {
   if (!audioCtx || !buffer) return;
-
-  if (audioCtx.state === "suspended") {
-    audioCtx.resume();
-  }
+  if (audioCtx.state === "suspended") audioCtx.resume();
 
   const source = audioCtx.createBufferSource();
   source.buffer = buffer;
@@ -42,9 +37,46 @@ function playSound(buffer) {
   source.start(0);
 }
 
-/* =========================
-   GAME LOGIC
-========================= */
+// ===== DATA SOAL =====
+const soal = [
+  {
+    gambar: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Welding_machine.jpg",
+    tanya: "Apa nama alat ini?",
+    opsi: ["旋盤", "溶接機", "モーター"],
+    benar: 1
+  },
+  {
+    gambar: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Japanese_food_sushi.jpg",
+    tanya: "Ini makanan apa?",
+    opsi: ["ラーメン", "カレー", "すし"],
+    benar: 2
+  }
+];
+
+// ===== TAMPILKAN SOAL =====
+function tampilSoal() {
+  if (indexSoal >= soal.length) {
+    selesaiGame();
+    return;
+  }
+
+  const s = soal[indexSoal];
+  document.getElementById("gambar").src = s.gambar;
+  document.getElementById("pertanyaan").innerText = s.tanya;
+
+  const areaJawaban = document.getElementById("jawaban");
+  areaJawaban.innerHTML = "";
+
+  s.opsi.forEach((opsi, i) => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.innerText = opsi;
+    btn.onclick = () => jawab(i === s.benar);
+    areaJawaban.appendChild(btn);
+  });
+}
+
+// ===== JAWAB =====
 function jawab(benar) {
   initAudio();
 
@@ -56,19 +88,33 @@ function jawab(benar) {
   if (benar) {
     score++;
     scoreText.innerText = score;
-
     title.innerHTML = "⭐ BENAR!";
-    text.innerHTML = `<span class="star">⭐</span><br>Hebat! Skormu bertambah 🎉`;
+    text.innerHTML = "Hebat! +1 bintang 🎉";
     playSound(soundBenar);
   } else {
     title.innerHTML = "😅 SALAH";
-    text.innerHTML = "Tidak apa-apa, coba lagi ya 💪";
+    text.innerHTML = "Coba lagi ya 💪";
     playSound(soundSalah);
   }
 
   popup.classList.remove("hidden");
+  indexSoal++;
 }
 
+// ===== TUTUP POPUP → LANJUT =====
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
+  tampilSoal();
 }
+
+// ===== SELESAI =====
+function selesaiGame() {
+  document.getElementById("pertanyaan").innerHTML =
+    `🎉 Selesai!<br>Skor Akhir: ⭐ ${score} / ${soal.length}`;
+  document.getElementById("gambar").style.display = "none";
+  document.getElementById("jawaban").innerHTML =
+    `<button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
+}
+
+// ===== MULAI GAME (INI YANG TADI KURANG) =====
+tampilSoal();
