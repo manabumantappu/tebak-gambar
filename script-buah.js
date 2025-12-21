@@ -192,7 +192,11 @@ const soal = [
    TAMPILKAN SOAL
 ===================== */
 function tampilSoal() {
-  if (indexSoal >= soal.length) {
+  function tampilSoal() {
+  // SEMBUNYIKAN LOADING
+  document.getElementById("loading").style.display = "none";
+     
+   if (indexSoal >= soal.length) {
     selesaiGame();
     return;
   }
