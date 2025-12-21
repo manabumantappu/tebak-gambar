@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tebak Gambar Planet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onclick="aktifkanAudio()">
+
+<header>
+  <h1>🪐 Tebak Gambar Planet</h1>
+  <p>Ayo tebak planet dari gambarnya 🚀</p>
+</header>
+
+<main class="container">
+
+  <!-- SCORE -->
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <!-- GAMBAR PLANET -->
+  <img id="gambar"
+       src=""
+       alt="Gambar Planet"
+       style="max-width:260px;border-radius:20px;margin:15px auto;display:block;">
+
+  <!-- PERTANYAAN -->
+  <p id="pertanyaan" style="font-size:1.2rem;font-weight:bold;">
+    Memuat soal...
+  </p>
+
+  <!-- JAWABAN -->
+  <div id="jawaban"></div>
+
+  <!-- 🔽 IKLAN ADSTERRA (OPSIONAL) -->
+  <!-- TARUH KODE NATIVE BANNER DI SINI -->
+
+</main>
+
+<!-- POPUP HASIL -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<!-- 🔊 AUDIO MP3 PUNYA KAMU -->
+<audio id="soundBenar" preload="auto" playsinline src="audio/benar.mp3"></audio>
+<audio id="soundSalah" preload="auto" playsinline src="audio/salah.mp3"></audio>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
