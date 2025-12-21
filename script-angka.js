@@ -56,9 +56,9 @@ const soal = [
     jumlah: 3
   },
   {
-    gambar: "images/angka/bola-4.png",
+    gambar: "images/angka/bola-5.png",
     tanya: "⚽ Ada berapa jumlah bola di gambar ini?",
-    jumlah: 4
+    jumlah: 5
   },
   {
     gambar: "images/angka/ikan-2.png",
