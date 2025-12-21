@@ -183,9 +183,49 @@ const soal = [
   benar: 2,
   info: "☀️ Matahari adalah bintang pusat Tata Surya."
 },
+{
+  gambar: "images/komet.jpg",
+  tanya: "☄️ Benda langit apakah ini?",
+  opsi: ["Meteor", "Komet", "Asteroid"],
+  benar: 1,
+  info: "☄️ Komet adalah benda langit es yang memiliki ekor saat mendekati Matahari."
+},
+{
+  gambar: "images/asteroid.jpg",
+  tanya: "🪨 Benda langit apakah ini?",
+  opsi: ["Asteroid", "Meteor", "Komet"],
+  benar: 0,
+  info: "🪨 Asteroid adalah batu angkasa yang mengorbit Matahari."
+},
+{
+  gambar: "images/nebula.jpg",
+  tanya: "🌫️ Ini adalah apa?",
+  opsi: ["Nebula", "Galaksi", "Planet"],
+  benar: 0,
+  info: "🌫️ Nebula adalah awan gas dan debu tempat lahirnya bintang."
+},
+{
+  gambar: "images/bintang.jpg",
+  tanya: "🌟 Benda langit apakah ini?",
+  opsi: ["Bintang", "Planet", "Bulan"],
+  benar: 0,
+  info: "🌟 Bintang memancarkan cahaya sendiri, berbeda dengan planet."
+},
+{
+  gambar: "images/satelit.jpg",
+  tanya: "🛰️ Benda apakah ini?",
+  opsi: ["Satelit Buatan", "Planet", "Meteor"],
+  benar: 0,
+  info: "🛰️ Satelit buatan dibuat manusia untuk komunikasi dan pengamatan."
+},
+{
+  gambar: "images/blackhole.jpg",
+  tanya: "🌌 Ini adalah apa?",
+  opsi: ["Lubang Hitam", "Planet", "Bintang"],
+  benar: 0,
+  info: "🕳️ Lubang hitam memiliki gravitasi sangat kuat."
+},
 
-
-   
 ];
 
 /* =====================
