@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Alphabet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔤 Quiz Alphabet</h1>
+  <p>Ayo tebak huruf A sampai Z ✨</p>
+</header>
+
+<!-- TOMBOL KEMBALI -->
+<div class="back-menu">
+  <a href="index.html">⬅ Kembali ke Menu</a>
+</div>
+
+<!-- LOADING ANIMASI ALPHABET -->
+<div id="loading" class="loading-box">
+  <div class="loader-items">
+    <div class="fruit">A</div>
+    <div class="fruit">B</div>
+    <div class="fruit">C</div>
+  </div>
+  <p>Memuat soal...</p>
+</div>
+
+<main class="container">
+
+  <!-- SCORE -->
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <!-- HURUF BESAR -->
+  <div id="huruf"
+       style="font-size:5rem;font-weight:bold;text-align:center;margin:20px 0;">
+    A
+  </div>
+
+  <!-- PERTANYAAN -->
+  <p id="pertanyaan" style="font-size:1.2rem;font-weight:bold;">
+    Huruf apakah ini?
+  </p>
+
+  <!-- JAWABAN -->
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<!-- SCRIPT -->
+<script src="script-alphabet.js"></script>
+
+</body>
+</html>
