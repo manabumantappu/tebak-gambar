@@ -104,7 +104,59 @@ const soal = [
     opsi: ["Jupiter", "Uranus", "Neptunus"],
     benar: 2,
     info: "🌊 Neptunus adalah planet terjauh dan sangat dingin."
-  }
+  },
+   {
+  gambar: "images/ceres.jpg", // ← ganti gambar kamu
+  tanya: "🪐 Benda langit apakah ini?",
+  opsi: ["Ceres", "Mars", "Pluto"],
+  benar: 0,
+  info: "🌑 Ceres adalah planet kerdil terbesar di sabuk asteroid."
+},
+   {
+  gambar: "images/pluto.jpg",
+  tanya: "🪐 Benda langit apakah ini?",
+  opsi: ["Neptunus", "Pluto", "Makemake"],
+  benar: 1,
+  info: "❄️ Pluto adalah planet kerdil yang sangat dingin di tepi Tata Surya."
+},
+{
+  gambar: "images/haumea.jpg",
+  tanya: "🪐 Benda langit apakah ini?",
+  opsi: ["Haumea", "Makemake", "Gonggong"],
+  benar: 0,
+  info: "🥚 Haumea berbentuk lonjong karena berputar sangat cepat."
+},
+   {
+  gambar: "images/makemake.jpg",
+  tanya: "🪐 Benda langit apakah ini?",
+  opsi: ["Pluto", "Makemake", "Eris"],
+  benar: 1,
+  info: "🧊 Makemake adalah planet kerdil es di Sabuk Kuiper."
+},
+{
+  gambar: "images/gonggong.jpg",
+  tanya: "🪐 Benda langit apakah ini?",
+  opsi: ["Eris", "Gonggong", "Sedna"],
+  benar: 1,
+  info: "🌌 Gonggong adalah planet kerdil jauh dengan orbit sangat panjang."
+},
+{
+  gambar: "images/milkyway.jpg",
+  tanya: "🌌 Ini adalah apa?",
+  opsi: ["Nebula", "Galaksi Bima Sakti", "Planet"],
+  benar: 1,
+  info: "🌠 Bima Sakti adalah galaksi tempat Tata Surya kita berada."
+},
+{
+  gambar: "images/andromeda.jpg",
+  tanya: "🌌 Ini adalah apa?",
+  opsi: ["Galaksi Andromeda", "Bintang", "Nebula"],
+  benar: 0,
+  info: "🚀 Galaksi Andromeda adalah galaksi besar terdekat dengan Bima Sakti."
+},
+
+
+   
 ];
 
 /* =====================
