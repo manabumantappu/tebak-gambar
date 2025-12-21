@@ -2,34 +2,35 @@ let score = 0;
 let indexSoal = 0;
 
 /* =====================
-   AUDIO (WEB AUDIO API) - FIX FIRST SOUND
+   AUDIO (WEB AUDIO API) - FIX TOTAL
+   (HANYA BAGIAN INI YANG DIUBAH)
 ===================== */
 let audioCtx = null;
 let soundBenar = null;
 let soundSalah = null;
 let audioReady = false;
 
-// INIT + LOAD AUDIO (PASTI SELESAI)
+// INIT + LOAD AUDIO (PASTI SELESAI SEBELUM DIPAKAI)
 async function initAudio() {
   if (audioReady) return;
 
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-  // tunggu sampai audio benar & salah selesai di-load
-  soundBenar = await loadSound("audio/benar.wav"); // ← ganti jika nama beda
-  soundSalah = await loadSound("audio/salah.wav"); // ← ganti jika nama beda
+  // LOAD FILE AUDIO (WAV / MP3 BEBAS)
+  soundBenar = await loadSound("audio/benar.wav");
+  soundSalah = await loadSound("audio/salah.wav");
 
   audioReady = true;
 }
 
 // LOAD 1 FILE AUDIO
 async function loadSound(url) {
-  const res = await fetch(url);
-  const arrayBuffer = await res.arrayBuffer();
+  const response = await fetch(url);
+  const arrayBuffer = await response.arrayBuffer();
   return await audioCtx.decodeAudioData(arrayBuffer);
 }
 
-// MAIN AUDIO
+// MAIN AUDIO PLAYER
 function playSound(buffer) {
   if (!audioReady || !buffer) return;
 
@@ -43,62 +44,62 @@ function playSound(buffer) {
   source.start(0);
 }
 
-
 /* =====================
    DATA QUIZ 8 PLANET
+   (TIDAK DIUBAH)
 ===================== */
 const soal = [
   {
-    gambar: "images/merkurius.jpg", // ← GANTI DI SINI
+    gambar: "images/merkurius.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Merkurius", "Mars", "Venus"],
     benar: 0,
     info: "🔥 Merkurius adalah planet terdekat dari Matahari."
   },
   {
-    gambar: "images/venus.jpg", // ← GANTI DI SINI
+    gambar: "images/venus.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Bumi", "Venus", "Jupiter"],
     benar: 1,
     info: "☁️ Venus adalah planet TERPANAS dengan awan tebal."
   },
   {
-    gambar: "images/bumi.jpg", // ← GANTI DI SINI
+    gambar: "images/bumi.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Mars", "Bumi", "Saturnus"],
     benar: 1,
     info: "🌍 Bumi adalah satu-satunya planet yang memiliki kehidupan."
   },
   {
-    gambar: "images/mars.jpg", // ← GANTI DI SINI
+    gambar: "images/mars.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Jupiter", "Mars", "Merkurius"],
     benar: 1,
     info: "🔴 Mars dikenal sebagai Planet Merah."
   },
   {
-    gambar: "images/jupiter.jpg", // ← GANTI DI SINI
+    gambar: "images/jupiter.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Saturnus", "Jupiter", "Neptunus"],
     benar: 1,
     info: "🌀 Jupiter adalah planet terbesar di Tata Surya."
   },
   {
-    gambar: "images/saturnus.jpg", // ← GANTI DI SINI
+    gambar: "images/saturnus.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Saturnus", "Uranus", "Jupiter"],
     benar: 0,
     info: "💍 Saturnus terkenal dengan cincin yang indah."
   },
   {
-    gambar: "images/uranus.jpg", // ← GANTI DI SINI
+    gambar: "images/uranus.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Neptunus", "Uranus", "Saturnus"],
     benar: 1,
     info: "🧊 Uranus berputar miring dan sangat dingin."
   },
   {
-    gambar: "images/neptunus.jpg", // ← GANTI DI SINI
+    gambar: "images/neptunus.jpg",
     tanya: "🪐 Planet apakah ini?",
     opsi: ["Jupiter", "Uranus", "Neptunus"],
     benar: 2,
@@ -108,6 +109,7 @@ const soal = [
 
 /* =====================
    TAMPILKAN SOAL
+   (TIDAK DIUBAH)
 ===================== */
 function tampilSoal() {
   if (indexSoal >= soal.length) {
@@ -133,9 +135,10 @@ function tampilSoal() {
 
 /* =====================
    JAWAB
+   (HANYA DITAMBAH async + await)
 ===================== */
-function jawab(benar) {
-  initAudio();
+async function jawab(benar) {
+  await initAudio(); // 🔥 KUNCI: audio siap SEBELUM diputar
 
   const popup = document.getElementById("popup");
   const title = document.getElementById("popupTitle");
@@ -162,6 +165,7 @@ function jawab(benar) {
 
 /* =====================
    TUTUP POPUP → LANJUT
+   (TIDAK DIUBAH)
 ===================== */
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
@@ -170,6 +174,7 @@ function tutupPopup() {
 
 /* =====================
    SELESAI + PREDIKAT
+   (TIDAK DIUBAH)
 ===================== */
 function selesaiGame() {
   let predikat = "";
@@ -200,5 +205,14 @@ function selesaiGame() {
 
 /* =====================
    MULAI GAME
+   (TIDAK DIUBAH)
 ===================== */
 tampilSoal();
+
+/* =====================
+   PRELOAD AUDIO SAAT KLIK PERTAMA
+   (TAMBAHAN AMAN)
+===================== */
+window.addEventListener("click", async () => {
+  await initAudio();
+}, { once: true });
