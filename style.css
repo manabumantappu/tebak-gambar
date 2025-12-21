@@ -198,3 +198,17 @@ footer {
   60% { transform: scale(1.4); }
   100% { transform: scale(1); }
 }
+/* WARNA MENU KATEGORI */
+.menu-card.alphabet { background: #e1f5fe; }
+.menu-card.angka { background: #fce4ec; }
+.menu-card.warna { background: #fff3e0; }
+.menu-card.bentuk { background: #ede7f6; }
+.menu-card.buah { background: #e8f5e9; }
+.menu-card.sayur { background: #f1f8e9; }
+.menu-card.binatang { background: #e8f5e9; }
+.menu-card.kendaraan { background: #fff8e1; }
+.menu-card.negara { background: #e3f2fd; }
+.menu-card.bendera { background: #ede7f6; }
+.menu-card.profesi { background: #fce4ec; }
+.menu-card.planet { background: #ede7f6; }
+
