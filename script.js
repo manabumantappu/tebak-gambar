@@ -16,8 +16,8 @@ function initAudio() {
 
 // 🔊 GANTI DI SINI (SUARA MP3 KAMU)
 async function loadSounds() {
-  soundBenar = await loadSound("audio/benar.mp3"); // suara benar
-  soundSalah = await loadSound("audio/salah.mp3"); // suara salah
+  soundBenar = await loadSound("audio/benar.wav"); // suara benar
+  soundSalah = await loadSound("audio/salah.wav"); // suara salah
 }
 
 async function loadSound(url) {
