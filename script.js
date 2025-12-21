@@ -154,6 +154,35 @@ const soal = [
   benar: 0,
   info: "🚀 Galaksi Andromeda adalah galaksi besar terdekat dengan Bima Sakti."
 },
+   {
+  gambar: "images/bulan.jpg",
+  tanya: "🌕 Benda langit apakah ini?",
+  opsi: ["Bulan", "Planet", "Bintang"],
+  benar: 0,
+  info: "🌕 Bulan adalah satelit alami Bumi."
+},
+
+{
+  gambar: "images/io.jpg",
+  tanya: "🟡 Benda langit apakah ini?",
+  opsi: ["Io", "Bulan", "Mars"],
+  benar: 0,
+  info: "🌋 Io adalah bulan Jupiter dengan banyak gunung berapi aktif."
+},
+{
+  gambar: "images/meteor.jpg",
+  tanya: "☄️ Benda langit apakah ini?",
+  opsi: ["Meteor", "Komet", "Planet"],
+  benar: 0,
+  info: "☄️ Meteor adalah batu angkasa yang terbakar saat masuk atmosfer Bumi."
+},
+{
+  gambar: "images/matahari.jpg",
+  tanya: "☀️ Benda langit apakah ini?",
+  opsi: ["Planet", "Bulan", "Matahari"],
+  benar: 2,
+  info: "☀️ Matahari adalah bintang pusat Tata Surya."
+},
 
 
    
