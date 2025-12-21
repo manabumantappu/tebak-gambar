@@ -2,39 +2,47 @@ let score = 0;
 let indexSoal = 0;
 
 /* =====================
-   AUDIO (WEB AUDIO API)
+   AUDIO (WEB AUDIO API) - FIX FIRST SOUND
 ===================== */
-let audioCtx;
-let soundBenar, soundSalah;
+let audioCtx = null;
+let soundBenar = null;
+let soundSalah = null;
+let audioReady = false;
 
-function initAudio() {
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    loadSounds();
-  }
+// INIT + LOAD AUDIO (PASTI SELESAI)
+async function initAudio() {
+  if (audioReady) return;
+
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  // tunggu sampai audio benar & salah selesai di-load
+  soundBenar = await loadSound("audio/benar.wav"); // ← ganti jika nama beda
+  soundSalah = await loadSound("audio/salah.wav"); // ← ganti jika nama beda
+
+  audioReady = true;
 }
 
-// 🔊 GANTI DI SINI (SUARA MP3 KAMU)
-async function loadSounds() {
-  soundBenar = await loadSound("audio/benar.wav"); // suara benar
-  soundSalah = await loadSound("audio/salah.wav"); // suara salah
-}
-
+// LOAD 1 FILE AUDIO
 async function loadSound(url) {
   const res = await fetch(url);
-  const buffer = await res.arrayBuffer();
-  return await audioCtx.decodeAudioData(buffer);
+  const arrayBuffer = await res.arrayBuffer();
+  return await audioCtx.decodeAudioData(arrayBuffer);
 }
 
+// MAIN AUDIO
 function playSound(buffer) {
-  if (!audioCtx || !buffer) return;
-  if (audioCtx.state === "suspended") audioCtx.resume();
+  if (!audioReady || !buffer) return;
+
+  if (audioCtx.state === "suspended") {
+    audioCtx.resume();
+  }
 
   const source = audioCtx.createBufferSource();
   source.buffer = buffer;
   source.connect(audioCtx.destination);
   source.start(0);
 }
+
 
 /* =====================
    DATA QUIZ 8 PLANET
