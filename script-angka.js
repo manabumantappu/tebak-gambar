@@ -1,9 +1,9 @@
 let score = 0;
 let indexSoal = 0;
 
-/* =====================
+/* =====================================================
    AUDIO (HTML AUDIO)
-===================== */
+===================================================== */
 let audioUnlocked = false;
 
 function unlockAudio() {
@@ -35,9 +35,9 @@ function playSalah() {
   a.play();
 }
 
-/* =====================
-   FUNGSI ACAK OPSI
-===================== */
+/* =====================================================
+   FUNGSI ACAK OPSI JAWABAN
+===================================================== */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -45,30 +45,41 @@ function shuffleArray(array) {
   }
 }
 
-/* =====================
-   DATA SOAL ANGKA (1–15)
-===================== */
+/* =====================================================
+   DATA SOAL HITUNG GAMBAR
+   jumlah = jawaban benar
+===================================================== */
 const soal = [
-  { angka: 1, tanya: "🔢 Angka 1 menunjukkan jumlah berapa?", opsi: ["1", "2", "3"], benar: 0, info: "1 berarti satu benda" },
-  { angka: 2, tanya: "🔢 Angka 2 menunjukkan jumlah berapa?", opsi: ["1", "2", "4"], benar: 1, info: "2 berarti dua benda" },
-  { angka: 3, tanya: "🔢 Angka 3 menunjukkan jumlah berapa?", opsi: ["3", "5", "2"], benar: 0, info: "3 berarti tiga benda" },
-  { angka: 4, tanya: "🔢 Angka 4 menunjukkan jumlah berapa?", opsi: ["4", "3", "6"], benar: 0, info: "4 berarti empat benda" },
-  { angka: 5, tanya: "🔢 Angka 5 menunjukkan jumlah berapa?", opsi: ["6", "5", "4"], benar: 1, info: "5 berarti lima benda" },
-  { angka: 6, tanya: "🔢 Angka 6 menunjukkan jumlah berapa?", opsi: ["6", "8", "5"], benar: 0, info: "6 berarti enam benda" },
-  { angka: 7, tanya: "🔢 Angka 7 menunjukkan jumlah berapa?", opsi: ["7", "6", "9"], benar: 0, info: "7 berarti tujuh benda" },
-  { angka: 8, tanya: "🔢 Angka 8 menunjukkan jumlah berapa?", opsi: ["9", "8", "7"], benar: 1, info: "8 berarti delapan benda" },
-  { angka: 9, tanya: "🔢 Angka 9 menunjukkan jumlah berapa?", opsi: ["9", "10", "8"], benar: 0, info: "9 berarti sembilan benda" },
-  { angka: 10, tanya: "🔢 Angka 10 menunjukkan jumlah berapa?", opsi: ["10", "9", "8"], benar: 0, info: "10 berarti sepuluh benda" },
-  { angka: 11, tanya: "🔢 Angka 11 menunjukkan jumlah berapa?", opsi: ["11", "10", "12"], benar: 0, info: "11 berarti sebelas benda" },
-  { angka: 12, tanya: "🔢 Angka 12 menunjukkan jumlah berapa?", opsi: ["12", "11", "13"], benar: 0, info: "12 berarti dua belas benda" },
-  { angka: 13, tanya: "🔢 Angka 13 menunjukkan jumlah berapa?", opsi: ["14", "13", "12"], benar: 1, info: "13 berarti tiga belas benda" },
-  { angka: 14, tanya: "🔢 Angka 14 menunjukkan jumlah berapa?", opsi: ["14", "15", "13"], benar: 0, info: "14 berarti empat belas benda" },
-  { angka: 15, tanya: "🔢 Angka 15 menunjukkan jumlah berapa?", opsi: ["16", "14", "15"], benar: 2, info: "15 berarti lima belas benda" }
+  {
+    gambar: "images/angka/apel-3.png",
+    tanya: "🍎 Ada berapa jumlah apel di gambar ini?",
+    jumlah: 3
+  },
+  {
+    gambar: "images/angka/bola-4.png",
+    tanya: "⚽ Ada berapa jumlah bola di gambar ini?",
+    jumlah: 4
+  },
+  {
+    gambar: "images/angka/ikan-2.png",
+    tanya: "🐟 Ada berapa jumlah ikan di gambar ini?",
+    jumlah: 2
+  },
+  {
+    gambar: "images/angka/bintang-6.png",
+    tanya: "⭐ Ada berapa jumlah bintang di gambar ini?",
+    jumlah: 6
+  },
+  {
+    gambar: "images/angka/apel-5.png",
+    tanya: "🍎 Ada berapa jumlah apel di gambar ini?",
+    jumlah: 5
+  }
 ];
 
-/* =====================
+/* =====================================================
    TAMPILKAN SOAL
-===================== */
+===================================================== */
 function tampilSoal() {
   document.getElementById("loading").style.display = "none";
 
@@ -78,27 +89,37 @@ function tampilSoal() {
   }
 
   const s = soal[indexSoal];
-  document.getElementById("angka").innerText = s.angka;
+
+  document.getElementById("gambar").src = s.gambar;
   document.getElementById("pertanyaan").innerText = s.tanya;
 
   const areaJawaban = document.getElementById("jawaban");
   areaJawaban.innerHTML = "";
 
-  const opsiAcak = [...s.opsi];
-  shuffleArray(opsiAcak);
+  // BUAT OPSI (BENAR + 2 SALAH)
+  let opsi = [
+    s.jumlah,
+    s.jumlah + 1,
+    Math.max(1, s.jumlah - 1)
+  ];
 
-  opsiAcak.forEach((opsi) => {
+  // ACAK OPSI
+  shuffleArray(opsi);
+
+  opsi.forEach((opsiAngka) => {
     const btn = document.createElement("button");
     btn.className = "btn";
-    btn.innerText = opsi;
-    btn.onclick = () => jawab(opsi === s.opsi[s.benar]);
+    btn.innerText = opsiAngka;
+
+    btn.onclick = () => jawab(opsiAngka === s.jumlah);
+
     areaJawaban.appendChild(btn);
   });
 }
 
-/* =====================
+/* =====================================================
    JAWAB
-===================== */
+===================================================== */
 function jawab(benar) {
   unlockAudio();
 
@@ -107,17 +128,15 @@ function jawab(benar) {
   const text = document.getElementById("popupText");
   const scoreText = document.getElementById("score");
 
-  const info = soal[indexSoal].info;
-
   if (benar) {
     score++;
     scoreText.innerText = score;
     title.innerHTML = "⭐ BENAR!";
-    text.innerHTML = `🎉 Hebat!<br>${info}`;
+    text.innerHTML = "Hebat! Kamu pintar menghitung 🎉";
     playBenar();
   } else {
     title.innerHTML = "😅 SALAH";
-    text.innerHTML = `💡 ${info}`;
+    text.innerHTML = "Coba hitung lagi ya 👀";
     playSalah();
   }
 
@@ -125,36 +144,36 @@ function jawab(benar) {
   indexSoal++;
 }
 
-/* =====================
+/* =====================================================
    TUTUP POPUP → LANJUT
-===================== */
+===================================================== */
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
   tampilSoal();
 }
 
-/* =====================
+/* =====================================================
    SELESAI
-===================== */
+===================================================== */
 function selesaiGame() {
   let predikat =
-    score >= 12 ? "🏆 PINTAR SEKALI!" :
-    score >= 8 ? "🎉 HEBAT!" :
+    score >= 4 ? "🏆 PINTAR SEKALI!" :
+    score >= 2 ? "🎉 HEBAT!" :
     "💪 TERUS BERLATIH";
 
-  document.getElementById("angka").innerHTML = "🎉";
   document.getElementById("pertanyaan").innerHTML = `
     Quiz Angka Selesai!<br><br>
     Skor: ${score} / ${soal.length}<br>
     <strong>${predikat}</strong>
   `;
 
+  document.getElementById("gambar").style.display = "none";
   document.getElementById("jawaban").innerHTML =
     `<button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
 }
 
-/* =====================
+/* =====================================================
    MULAI GAME
-===================== */
+===================================================== */
 tampilSoal();
 window.addEventListener("click", unlockAudio, { once: true });
