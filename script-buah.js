@@ -192,7 +192,6 @@ const soal = [
    TAMPILKAN SOAL
 ===================== */
 function tampilSoal() {
-  function tampilSoal() {
   // SEMBUNYIKAN LOADING
   document.getElementById("loading").style.display = "none";
      
