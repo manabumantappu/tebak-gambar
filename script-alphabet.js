@@ -1,9 +1,10 @@
 let score = 0;
 let indexSoal = 0;
 
-/* =====================
+/* =====================================================
    AUDIO (HTML AUDIO)
-===================== */
+   Digunakan agar suara bisa diputar setelah interaksi user
+===================================================== */
 let audioUnlocked = false;
 
 function unlockAudio() {
@@ -35,9 +36,23 @@ function playSalah() {
   a.play();
 }
 
-/* =====================
+/* =====================================================
+   FUNGSI ACAK ARRAY (PENTING)
+   Fungsi ini digunakan untuk mengacak posisi jawaban
+   supaya jawaban benar TIDAK selalu di posisi yang sama
+===================================================== */
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+/* =====================================================
    DATA SOAL ALPHABET A–Z
-===================== */
+   ⚠️ DATA TIDAK DIUBAH
+   Jawaban benar tetap ditentukan oleh index "benar"
+===================================================== */
 const soal = [
   { huruf: "A", tanya: "🔤 Huruf A untuk kata apa?", opsi: ["Apple", "Ball", "Cat"], benar: 0, info: "🍎 A untuk Apple" },
   { huruf: "B", tanya: "🔤 Huruf B untuk kata apa?", opsi: ["Dog", "Ball", "Apple"], benar: 1, info: "⚽ B untuk Ball" },
@@ -67,9 +82,10 @@ const soal = [
   { huruf: "Z", tanya: "🔤 Huruf Z untuk kata apa?", opsi: ["Zebra", "Cat", "Dog"], benar: 0, info: "🦓 Z untuk Zebra" }
 ];
 
-/* =====================
+/* =====================================================
    TAMPILKAN SOAL
-===================== */
+   👉 OPSI JAWABAN DIACAK DI SINI
+===================================================== */
 function tampilSoal() {
   document.getElementById("loading").style.display = "none";
 
@@ -85,18 +101,27 @@ function tampilSoal() {
   const areaJawaban = document.getElementById("jawaban");
   areaJawaban.innerHTML = "";
 
-  s.opsi.forEach((opsi, i) => {
+  // 🔑 SALIN OPSI AGAR DATA ASLI TIDAK BERUBAH
+  const opsiAcak = [...s.opsi];
+
+  // 🔀 ACAK URUTAN OPSI
+  shuffleArray(opsiAcak);
+
+  opsiAcak.forEach((opsi) => {
     const btn = document.createElement("button");
     btn.className = "btn";
     btn.innerText = opsi;
-    btn.onclick = () => jawab(i === s.benar);
+
+    // ✅ CEK BERDASARKAN ISI TEKS, BUKAN POSISI
+    btn.onclick = () => jawab(opsi === s.opsi[s.benar]);
+
     areaJawaban.appendChild(btn);
   });
 }
 
-/* =====================
+/* =====================================================
    JAWAB
-===================== */
+===================================================== */
 function jawab(benar) {
   unlockAudio();
 
@@ -123,17 +148,17 @@ function jawab(benar) {
   indexSoal++;
 }
 
-/* =====================
+/* =====================================================
    TUTUP POPUP → LANJUT
-===================== */
+===================================================== */
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
   tampilSoal();
 }
 
-/* =====================
+/* =====================================================
    SELESAI
-===================== */
+===================================================== */
 function selesaiGame() {
   let predikat =
     score >= 20 ? "🏆 PINTAR SEKALI!" :
@@ -151,8 +176,8 @@ function selesaiGame() {
     `<button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
 }
 
-/* =====================
+/* =====================================================
    MULAI GAME
-===================== */
+===================================================== */
 tampilSoal();
 window.addEventListener("click", unlockAudio, { once: true });
