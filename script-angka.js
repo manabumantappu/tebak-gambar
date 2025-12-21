@@ -74,7 +74,82 @@ const soal = [
     gambar: "images/angka/apel-5.png",
     tanya: "🍎 Ada berapa jumlah apel di gambar ini?",
     jumlah: 5
-  }
+  },
+   {
+  gambar: "images/angka/jeruk-4.png",
+  tanya: "🍊 Ada berapa jumlah jeruk di gambar ini?",
+  jumlah: 4
+},
+{
+  gambar: "images/angka/pisang-6.png",
+  tanya: "🍌 Ada berapa jumlah pisang di gambar ini?",
+  jumlah: 6
+},
+{
+  gambar: "images/angka/mobil-3.png",
+  tanya: "🚗 Ada berapa jumlah mobil di gambar ini?",
+  jumlah: 3
+},
+{
+  gambar: "images/angka/balon-5.png",
+  tanya: "🎈 Ada berapa jumlah balon di gambar ini?",
+  jumlah: 5
+},
+{
+  gambar: "images/angka/kue-8.png",
+  tanya: "🧁 Ada berapa jumlah kue di gambar ini?",
+  jumlah: 8
+},
+{
+  gambar: "images/angka/bunga-7.png",
+  tanya: "🌸 Ada berapa jumlah bunga di gambar ini?",
+  jumlah: 7
+},
+{
+  gambar: "images/angka/bola-9.png",
+  tanya: "⚽ Ada berapa jumlah bola di gambar ini?",
+  jumlah: 9
+},
+{
+  gambar: "images/angka/ikan-10.png",
+  tanya: "🐟 Ada berapa jumlah ikan di gambar ini?",
+  jumlah: 10
+},
+{
+  gambar: "images/angka/buku-6.png",
+  tanya: "📚 Ada berapa jumlah buku di gambar ini?",
+  jumlah: 6
+},
+{
+  gambar: "images/angka/es-krim-4.png",
+  tanya: "🍦 Ada berapa jumlah es krim di gambar ini?",
+  jumlah: 4
+},
+{
+  gambar: "images/angka/pohon-5.png",
+  tanya: "🌳 Ada berapa jumlah pohon di gambar ini?",
+  jumlah: 5
+},
+{
+  gambar: "images/angka/bintang-9.png",
+  tanya: "⭐ Ada berapa jumlah bintang di gambar ini?",
+  jumlah: 9
+},
+{
+  gambar: "images/angka/ayam-7.png",
+  tanya: "🐔 Ada berapa jumlah ayam di gambar ini?",
+  jumlah: 7
+},
+{
+  gambar: "images/angka/sepatu-2.png",
+  tanya: "👟 Ada berapa jumlah sepatu di gambar ini?",
+  jumlah: 2
+},
+{
+  gambar: "images/angka/pensil-8.png",
+  tanya: "✏️ Ada berapa jumlah pensil di gambar ini?",
+  jumlah: 8
+}
 ];
 
 /* =====================================================
