@@ -80,7 +80,77 @@ const soal = [
     opsi: ["Elang", "Burung Hantu", "Rajawali"],
     benar: 0,
     info: "🦅 Elang adalah burung pemangsa."
-  }
+  },
+{
+  gambar: "images/binatang/katak.jpg",
+  tanya: "🐸 Binatang apakah ini?",
+  opsi: ["Katak", "Kadal", "Ular"],
+  benar: 0,
+  info: "🐸 Katak bisa hidup di air dan di darat."
+},
+{
+  gambar: "images/binatang/domba.jpg",
+  tanya: "🐑 Binatang apakah ini?",
+  opsi: ["Kambing", "Domba", "Sapi"],
+  benar: 1,
+  info: "🐑 Domba memiliki bulu tebal dan lembut."
+},
+{
+  gambar: "images/binatang/ayam.jpg",
+  tanya: "🐔 Binatang apakah ini?",
+  opsi: ["Bebek", "Ayam", "Kalkun"],
+  benar: 1,
+  info: "🐔 Ayam menghasilkan telur."
+},
+{
+  gambar: "images/binatang/sapi.jpg",
+  tanya: "🐄 Binatang apakah ini?",
+  opsi: ["Kerbau", "Sapi", "Kuda"],
+  benar: 1,
+  info: "🐄 Sapi menghasilkan susu."
+},
+{
+  gambar: "images/binatang/kuda.jpg",
+  tanya: "🐴 Binatang apakah ini?",
+  opsi: ["Kuda", "Zebra", "Keledai"],
+  benar: 0,
+  info: "🐴 Kuda dapat berlari sangat cepat."
+},
+{
+  gambar: "images/binatang/kelinci.jpg",
+  tanya: "🐰 Binatang apakah ini?",
+  opsi: ["Kelinci", "Hamster", "Tikus"],
+  benar: 0,
+  info: "🐰 Kelinci suka makan wortel."
+},
+{
+  gambar: "images/binatang/kura-kura.jpg",
+  tanya: "🐢 Binatang apakah ini?",
+  opsi: ["Kadal", "Kura-kura", "Katak"],
+  benar: 1,
+  info: "🐢 Kura-kura berjalan lambat dan memiliki tempurung."
+},
+{
+  gambar: "images/binatang/bebek.jpg",
+  tanya: "🦆 Binatang apakah ini?",
+  opsi: ["Angsa", "Bebek", "Ayam"],
+  benar: 1,
+  info: "🦆 Bebek pandai berenang."
+},
+{
+  gambar: "images/binatang/kucing.jpg",
+  tanya: "🐱 Binatang apakah ini?",
+  opsi: ["Anjing", "Kucing", "Kelinci"],
+  benar: 1,
+  info: "🐱 Kucing suka mengeong dan bermain."
+},
+{
+  gambar: "images/binatang/anjing.jpg",
+  tanya: "🐶 Binatang apakah ini?",
+  opsi: ["Serigala", "Anjing", "Rubah"],
+  benar: 1,
+  info: "🐶 Anjing adalah sahabat manusia."
+},
 ];
 
 /* =====================
