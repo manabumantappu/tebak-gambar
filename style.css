@@ -302,4 +302,28 @@ footer {
     transform: translateY(0);
   }
 }
+/* ===== IKLAN AMAN UNTUK QUIZ ANAK ===== */
+.ad-safe {
+  max-width: 320px;              /* ukuran aman mobile */
+  margin: 30px auto;
+  padding: 12px;
+  background: #f4f7fb;           /* warna lembut */
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.ad-label {
+  font-size: 0.75rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* cegah iklan melebar aneh */
+#ad-container,
+#ad-safe iframe,
+.ad-safe iframe {
+  max-width: 100% !important;
+  height: auto !important;
+}
 
