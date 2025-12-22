@@ -63,16 +63,6 @@ const soal = [
   { type: "trapezoid", nama: "Trapesium", opsi: ["Trapesium", "Persegi", "Segitiga"] },
   { type: "parallelogram", nama: "Jajar Genjang", opsi: ["Jajar Genjang", "Persegi", "Belah Ketupat"] },
   { type: "arrow", nama: "Panah", opsi: ["Panah", "Segitiga", "Belah Ketupat"] },
-{ type: "equilateral", nama: "Segitiga Sama Sisi", opsi: ["Segitiga Sama Sisi", "Segitiga", "Persegi"] },
-{ type: "octagon", nama: "Segi Delapan", opsi: ["Segi Delapan", "Segi Enam", "Lingkaran"] },
-{ type: "kite", nama: "Layang-layang", opsi: ["Layang-layang", "Belah Ketupat", "Segitiga"] },
-{ type: "half-circle", nama: "Setengah Lingkaran", opsi: ["Setengah Lingkaran", "Oval", "Lingkaran"] },
-{ type: "cylinder", nama: "Tabung", opsi: ["Tabung", "Balok", "Kubus"] },
-{ type: "cube", nama: "Kubus", opsi: ["Kubus", "Balok", "Persegi"] },
-{ type: "cuboid", nama: "Balok", opsi: ["Balok", "Kubus", "Persegi Panjang"] },
-{ type: "ring", nama: "Cincin", opsi: ["Cincin", "Lingkaran", "Oval"] },
-{ type: "spiral", nama: "Spiral", opsi: ["Spiral", "Lingkaran", "Panah"] },
-{ type: "infinity", nama: "Tak Terhingga", opsi: ["Tak Terhingga", "Oval", "Lingkaran"] }
 
 ];
 
