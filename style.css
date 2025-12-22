@@ -246,4 +246,28 @@ footer {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* ===== MENU LEBIH INTERAKTIF ===== */
+.menu-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+.menu-card:active {
+  transform: scale(0.96);
+}
+
+/* ===== VISITOR COUNTER ===== */
+.visitor-box {
+  margin: 15px auto;
+  width: fit-content;
+  padding: 8px 18px;
+  background: #ffffff;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
