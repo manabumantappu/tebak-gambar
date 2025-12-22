@@ -157,6 +157,84 @@ const soal = [
 }
 
 ];
+/* =====================
+   TAMPILKAN SOAL
+===================== */
+function tampilSoal() {
+  const loading = document.getElementById("loading");
+  if (loading) loading.style.display = "none";
+
+  if (indexSoal >= soal.length) {
+    selesaiGame();
+    return;
+  }
+
+  const s = soal[indexSoal];
+
+  const img = document.getElementById("gambar");
+  img.src = s.gambar;
+  img.style.display = "block";
+
+  document.getElementById("jawaban").innerHTML = "";
+
+  s.opsi.forEach((opsi) => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.innerText = opsi;
+    btn.onclick = () => jawab(opsi === s.nama);
+    document.getElementById("jawaban").appendChild(btn);
+  });
+}
+
+/* =====================
+   JAWAB
+===================== */
+function jawab(benar) {
+  const popup = document.getElementById("popup");
+  const title = document.getElementById("popupTitle");
+  const text = document.getElementById("popupText");
+
+  if (benar) {
+    score++;
+    document.getElementById("score").innerText = score;
+    title.innerText = "⭐ BENAR!";
+    text.innerText = soal[indexSoal].info;
+  } else {
+    title.innerText = "😅 SALAH";
+    text.innerText = soal[indexSoal].info;
+  }
+
+  popup.classList.remove("hidden");
+  indexSoal++;
+}
+
+/* =====================
+   TUTUP POPUP
+===================== */
+function tutupPopup() {
+  document.getElementById("popup").classList.add("hidden");
+  tampilSoal();
+}
+
+/* =====================
+   SELESAI
+===================== */
+function selesaiGame() {
+  document.getElementById("gambar").style.display = "none";
+  document.getElementById("jawaban").innerHTML =
+    `<button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
+
+  document.getElementById("popupTitle").innerText = "🎉 Selesai!";
+  document.getElementById("popupText").innerText =
+    `Skor kamu: ${score} / ${soal.length}`;
+
+  document.getElementById("popup").classList.remove("hidden");
+}
+
+/* =====================
+   MULAI SETELAH HALAMAN SIAP
+===================== */
+document.addEventListener("DOMContentLoaded", tampilSoal);
 
 /* =====================
    CATATAN PENTING
