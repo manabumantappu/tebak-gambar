@@ -1,0 +1,204 @@
+let score = 0;
+let indexSoal = 0;
+
+/* =====================
+   AUDIO (HTML AUDIO)
+===================== */
+let audioUnlocked = false;
+
+function unlockAudio() {
+  if (audioUnlocked) return;
+
+  const a1 = document.getElementById("soundBenar");
+  const a2 = document.getElementById("soundSalah");
+  if (!a1 || !a2) return;
+
+  a1.play().then(() => {
+    a1.pause();
+    a1.currentTime = 0;
+    audioUnlocked = true;
+  }).catch(() => {});
+}
+
+function playBenar() {
+  const a = document.getElementById("soundBenar");
+  if (!a) return;
+  a.currentTime = 0;
+  a.play();
+}
+
+function playSalah() {
+  const a = document.getElementById("soundSalah");
+  if (!a) return;
+  a.currentTime = 0;
+  a.play();
+}
+
+/* =====================
+   ACAK OPSI
+===================== */
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+/* =====================
+   DATA SOAL NEGARA & BENDERA
+===================== */
+const soal = [
+  {
+    gambar: "images/bendera/indonesia.png",
+    nama: "Indonesia",
+    opsi: ["Indonesia", "Polandia", "Monako"],
+    info: "Indonesia memiliki bendera Merah Putih."
+  },
+  {
+    gambar: "images/bendera/jepang.png",
+    nama: "Jepang",
+    opsi: ["Jepang", "China", "Korea Selatan"],
+    info: "Bendera Jepang disebut Hinomaru."
+  },
+  {
+    gambar: "images/bendera/amerika.png",
+    nama: "Amerika Serikat",
+    opsi: ["Amerika Serikat", "Inggris", "Australia"],
+    info: "Bendera Amerika memiliki bintang dan garis."
+  },
+  {
+    gambar: "images/bendera/inggris.png",
+    nama: "Inggris",
+    opsi: ["Inggris", "Prancis", "Belanda"],
+    info: "Bendera Inggris disebut Union Jack."
+  },
+  {
+    gambar: "images/bendera/prancis.png",
+    nama: "Prancis",
+    opsi: ["Prancis", "Italia", "Belanda"],
+    info: "Bendera Prancis berwarna biru, putih, dan merah."
+  },
+  {
+    gambar: "images/bendera/jerman.png",
+    nama: "Jerman",
+    opsi: ["Jerman", "Belgia", "Austria"],
+    info: "Bendera Jerman berwarna hitam, merah, dan kuning."
+  },
+  {
+    gambar: "images/bendera/china.png",
+    nama: "China",
+    opsi: ["China", "Vietnam", "Korea Utara"],
+    info: "Bendera China memiliki lima bintang."
+  },
+  {
+    gambar: "images/bendera/australia.png",
+    nama: "Australia",
+    opsi: ["Australia", "Selandia Baru", "Inggris"],
+    info: "Bendera Australia memiliki gambar bintang."
+  },
+  {
+    gambar: "images/bendera/kanada.png",
+    nama: "Kanada",
+    opsi: ["Kanada", "Amerika Serikat", "Austria"],
+    info: "Bendera Kanada memiliki daun maple."
+  },
+  {
+    gambar: "images/bendera/brazil.png",
+    nama: "Brasil",
+    opsi: ["Brasil", "Argentina", "Kolombia"],
+    info: "Bendera Brasil berwarna hijau dan kuning."
+  }
+];
+
+/* =====================
+   TAMPILKAN SOAL
+===================== */
+function tampilSoal() {
+  document.getElementById("loading").style.display = "none";
+
+  if (indexSoal >= soal.length) {
+    selesaiGame();
+    return;
+  }
+
+  const s = soal[indexSoal];
+  document.getElementById("gambar").src = s.gambar;
+  document.getElementById("pertanyaan").innerText = "Bendera negara apakah ini?";
+
+  const areaJawaban = document.getElementById("jawaban");
+  areaJawaban.innerHTML = "";
+
+  const opsiAcak = [...s.opsi];
+  shuffleArray(opsiAcak);
+
+  opsiAcak.forEach((opsi) => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.innerText = opsi;
+    btn.onclick = () => jawab(opsi === s.nama);
+    areaJawaban.appendChild(btn);
+  });
+}
+
+/* =====================
+   JAWAB + INFO
+===================== */
+function jawab(benar) {
+  unlockAudio();
+
+  const popup = document.getElementById("popup");
+  const title = document.getElementById("popupTitle");
+  const text = document.getElementById("popupText");
+  const scoreText = document.getElementById("score");
+
+  const info = soal[indexSoal].info;
+
+  if (benar) {
+    score++;
+    scoreText.innerText = score;
+    title.innerHTML = "⭐ BENAR!";
+    text.innerHTML = info;
+    playBenar();
+  } else {
+    title.innerHTML = "😅 SALAH";
+    text.innerHTML = info;
+    playSalah();
+  }
+
+  popup.classList.remove("hidden");
+  indexSoal++;
+}
+
+/* =====================
+   TUTUP POPUP
+===================== */
+function tutupPopup() {
+  document.getElementById("popup").classList.add("hidden");
+  tampilSoal();
+}
+
+/* =====================
+   SELESAI
+===================== */
+function selesaiGame() {
+  let predikat =
+    score >= 7 ? "🏆 PINTAR SEKALI!" :
+    score >= 4 ? "🎉 HEBAT!" :
+    "💪 TERUS BERLATIH";
+
+  document.getElementById("pertanyaan").innerHTML = `
+    Quiz Negara & Bendera Selesai!<br><br>
+    Skor: ${score} / ${soal.length}<br>
+    <strong>${predikat}</strong>
+  `;
+
+  document.getElementById("gambar").style.display = "none";
+  document.getElementById("jawaban").innerHTML =
+    `<button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
+}
+
+/* =====================
+   MULAI GAME
+===================== */
+tampilSoal();
+window.addEventListener("click", unlockAudio, { once: true });
