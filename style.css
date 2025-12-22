@@ -270,4 +270,36 @@ footer {
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+/* =====================
+   ANIMASI MASUK HALAMAN
+===================== */
+
+/* awal: semua elemen disembunyikan */
+.animate {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+/* saat aktif */
+.animate.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.6s ease;
+}
+
+/* HEADER TURUN DARI ATAS */
+.home-header {
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
