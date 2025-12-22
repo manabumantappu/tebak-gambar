@@ -35,7 +35,7 @@ function playSalah() {
 }
 
 /* =====================
-   ACAK OPSI
+   ACAK OPSI JAWABAN
 ===================== */
 function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -45,141 +45,127 @@ function shuffleArray(arr) {
 }
 
 /* =====================
-   DATA SOAL BENTUK (15)
+   DATA SOAL BENTUK + INFO
 ===================== */
 const soal = [
-  { type: "circle", nama: "Lingkaran", opsi: ["Lingkaran", "Persegi", "Segitiga"] },
-  { type: "square", nama: "Persegi", opsi: ["Persegi", "Lingkaran", "Segitiga"] },
-  { type: "triangle", nama: "Segitiga", opsi: ["Segitiga", "Persegi", "Lingkaran"] },
-  { type: "rectangle", nama: "Persegi Panjang", opsi: ["Persegi Panjang", "Persegi", "Lingkaran"] },
-  { type: "oval", nama: "Oval", opsi: ["Oval", "Lingkaran", "Segitiga"] },
-  { type: "diamond", nama: "Belah Ketupat", opsi: ["Belah Ketupat", "Persegi", "Segitiga"] },
-  { type: "star", nama: "Bintang", opsi: ["Bintang", "Lingkaran", "Segitiga"] },
-  { type: "heart", nama: "Hati", opsi: ["Hati", "Oval", "Lingkaran"] },
-  { type: "pentagon", nama: "Segi Lima", opsi: ["Segi Lima", "Segi Empat", "Segitiga"] },
-  { type: "hexagon", nama: "Segi Enam", opsi: ["Segi Enam", "Segi Lima", "Lingkaran"] },
-  { type: "crescent", nama: "Bulan Sabit", opsi: ["Bulan Sabit", "Oval", "Lingkaran"] },
-  { type: "cross", nama: "Tanda Plus", opsi: ["Tanda Plus", "Segitiga", "Persegi"] },
-  { type: "trapezoid", nama: "Trapesium", opsi: ["Trapesium", "Persegi", "Segitiga"] },
-  { type: "parallelogram", nama: "Jajar Genjang", opsi: ["Jajar Genjang", "Persegi", "Belah Ketupat"] },
-  { type: "arrow", nama: "Panah", opsi: ["Panah", "Segitiga", "Belah Ketupat"] },
-
+  {
+    type: "circle",
+    nama: "Lingkaran",
+    opsi: ["Lingkaran", "Persegi", "Segitiga"],
+    info: "Lingkaran tidak memiliki sudut."
+  },
+  {
+    type: "square",
+    nama: "Persegi",
+    opsi: ["Persegi", "Lingkaran", "Segitiga"],
+    info: "Persegi memiliki 4 sisi sama panjang."
+  },
+  {
+    type: "triangle",
+    nama: "Segitiga",
+    opsi: ["Segitiga", "Persegi", "Lingkaran"],
+    info: "Segitiga memiliki 3 sisi dan 3 sudut."
+  },
+  {
+    type: "equilateral",
+    nama: "Segitiga Sama Sisi",
+    opsi: ["Segitiga Sama Sisi", "Segitiga", "Persegi"],
+    info: "Segitiga sama sisi memiliki 3 sisi yang sama panjang."
+  },
+  {
+    type: "rectangle",
+    nama: "Persegi Panjang",
+    opsi: ["Persegi Panjang", "Persegi", "Lingkaran"],
+    info: "Persegi panjang memiliki 2 sisi panjang dan 2 sisi pendek."
+  },
+  {
+    type: "oval",
+    nama: "Oval",
+    opsi: ["Oval", "Lingkaran", "Segitiga"],
+    info: "Oval mirip lingkaran tetapi lebih panjang."
+  },
+  {
+    type: "diamond",
+    nama: "Belah Ketupat",
+    opsi: ["Belah Ketupat", "Persegi", "Segitiga"],
+    info: "Belah ketupat memiliki 4 sisi sama panjang."
+  },
+  {
+    type: "star",
+    nama: "Bintang",
+    opsi: ["Bintang", "Lingkaran", "Segitiga"],
+    info: "Bintang memiliki sudut runcing."
+  },
+  {
+    type: "heart",
+    nama: "Hati",
+    opsi: ["Hati", "Oval", "Lingkaran"],
+    info: "Bentuk hati sering melambangkan cinta."
+  },
+  {
+    type: "pentagon",
+    nama: "Segi Lima",
+    opsi: ["Segi Lima", "Segi Empat", "Segitiga"],
+    info: "Segi lima memiliki 5 sisi."
+  },
+  {
+    type: "hexagon",
+    nama: "Segi Enam",
+    opsi: ["Segi Enam", "Segi Lima", "Lingkaran"],
+    info: "Segi enam memiliki 6 sisi."
+  },
+  {
+    type: "half-circle",
+    nama: "Setengah Lingkaran",
+    opsi: ["Setengah Lingkaran", "Oval", "Lingkaran"],
+    info: "Setengah lingkaran adalah separuh lingkaran."
+  },
+  {
+    type: "ring",
+    nama: "Cincin",
+    opsi: ["Cincin", "Lingkaran", "Oval"],
+    info: "Cincin adalah lingkaran yang berlubang."
+  },
+  {
+    type: "arrow",
+    nama: "Panah",
+    opsi: ["Panah", "Segitiga", "Belah Ketupat"],
+    info: "Panah menunjukkan arah."
+  }
 ];
 
 /* =====================
-   RENDER BENTUK
+   RENDER BENTUK (PNG)
 ===================== */
 function renderShape(type) {
   const box = document.getElementById("shapeBox");
   box.innerHTML = "";
-  box.style.background = "transparent";
 
-  const el = document.createElement("div");
-  el.style.width = "160px";
-  el.style.height = "160px";
-  el.style.background = "#42a5f5";
+  const img = document.createElement("img");
+  img.style.maxWidth = "200px";
+  img.style.height = "auto";
 
-  switch (type) {
-    case "circle":
-      el.style.borderRadius = "50%";
-      break;
-    case "square":
-      break;
-    case "rectangle":
-      el.style.width = "180px";
-      el.style.height = "120px";
-      break;
-    case "oval":
-      el.style.width = "180px";
-      el.style.height = "120px";
-      el.style.borderRadius = "50%";
-      break;
-    case "triangle":
-      el.style.width = "0";
-      el.style.height = "0";
-      el.style.borderLeft = "80px solid transparent";
-      el.style.borderRight = "80px solid transparent";
-      el.style.borderBottom = "140px solid #42a5f5";
-      el.style.background = "transparent";
-      break;
-    case "diamond":
-      el.style.transform = "rotate(45deg)";
-      break;
-    case "star":
-      el.innerText = "⭐";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "heart":
-      el.innerText = "❤️";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "pentagon":
-      el.innerText = "⬟";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "hexagon":
-      el.innerText = "⬢";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "crescent":
-      el.innerText = "🌙";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "cross":
-      el.innerText = "➕";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "trapezoid":
-      el.innerText = "⏢";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "parallelogram":
-      el.innerText = "▱";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-    case "arrow":
-      el.innerText = "➡️";
-      el.style.fontSize = "7rem";
-      el.style.background = "transparent";
-      el.style.display = "flex";
-      el.style.alignItems = "center";
-      el.style.justifyContent = "center";
-      break;
-  }
+  const images = {
+    circle: "images/bentuk/lingkaran.png",
+    square: "images/bentuk/persegi.png",
+    triangle: "images/bentuk/segitiga.png",
+    equilateral: "images/bentuk/segitiga-sama-sisi.png",
+    rectangle: "images/bentuk/persegi-panjang.png",
+    oval: "images/bentuk/oval.png",
+    diamond: "images/bentuk/belah-ketupat.png",
+    star: "images/bentuk/bintang.png",
+    heart: "images/bentuk/hati.png",
+    pentagon: "images/bentuk/segi-lima.png",
+    hexagon: "images/bentuk/segi-enam.png",
+    "half-circle": "images/bentuk/setengah-lingkaran.png",
+    ring: "images/bentuk/cincin.png",
+    arrow: "images/bentuk/panah.png"
+  };
 
-  box.appendChild(el);
+  img.src = images[type] || "";
+  img.alt = "Bentuk";
+
+  box.appendChild(img);
 }
 
 /* =====================
@@ -212,7 +198,7 @@ function tampilSoal() {
 }
 
 /* =====================
-   JAWAB
+   JAWAB + INFO
 ===================== */
 function jawab(benar) {
   unlockAudio();
@@ -222,15 +208,17 @@ function jawab(benar) {
   const text = document.getElementById("popupText");
   const scoreText = document.getElementById("score");
 
+  const info = soal[indexSoal].info;
+
   if (benar) {
     score++;
     scoreText.innerText = score;
     title.innerHTML = "⭐ BENAR!";
-    text.innerHTML = "Hebat! Kamu mengenal bentuk 🎉";
+    text.innerHTML = info;
     playBenar();
   } else {
     title.innerHTML = "😅 SALAH";
-    text.innerHTML = "Coba lagi ya 🔍";
+    text.innerHTML = info;
     playSalah();
   }
 
@@ -239,7 +227,7 @@ function jawab(benar) {
 }
 
 /* =====================
-   TUTUP POPUP → LANJUT
+   TUTUP POPUP
 ===================== */
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
@@ -251,8 +239,8 @@ function tutupPopup() {
 ===================== */
 function selesaiGame() {
   let predikat =
-    score >= 12 ? "🏆 PINTAR SEKALI!" :
-    score >= 8 ? "🎉 HEBAT!" :
+    score >= 10 ? "🏆 PINTAR SEKALI!" :
+    score >= 6 ? "🎉 HEBAT!" :
     "💪 TERUS BERLATIH";
 
   document.getElementById("pertanyaan").innerHTML = `
