@@ -215,9 +215,11 @@ function jawab(benar) {
     document.getElementById("score").innerText = score;
     title.innerText = "⭐ BENAR!";
     text.innerText = soal[indexSoal].info;
+     playBenar(); // 🔊 SUARA BENAR
   } else {
     title.innerText = "😅 SALAH";
     text.innerText = soal[indexSoal].info;
+    playSalah(); // 🔊 SUARA SALAH
   }
 
   popup.classList.remove("hidden");
