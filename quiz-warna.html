@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Warna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🎨 Quiz Warna</h1>
+  <p>Ayo tebak warna yang benar 🌈</p>
+</header>
+
+<!-- TOMBOL KEMBALI -->
+<div class="back-menu">
+  <a href="index.html">⬅ Kembali ke Menu</a>
+</div>
+
+<!-- LOADING ANIMASI -->
+<div id="loading" class="loading-box">
+  <div class="loader-items">
+    <div class="fruit" style="background:#e53935"></div>
+    <div class="fruit" style="background:#1e88e5"></div>
+    <div class="fruit" style="background:#fdd835"></div>
+  </div>
+  <p>Memuat soal...</p>
+</div>
+
+<main class="container">
+
+  <!-- SCORE -->
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <!-- BLOK WARNA -->
+  <div id="warnaBox"
+       style="width:200px;height:200px;border-radius:20px;margin:20px auto;">
+  </div>
+
+  <!-- PERTANYAAN -->
+  <p id="pertanyaan" style="font-size:1.2rem;font-weight:bold;">
+    Warna apakah ini?
+  </p>
+
+  <!-- JAWABAN -->
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<!-- SCRIPT -->
+<script src="script-warna.js"></script>
+
+</body>
+</html>
