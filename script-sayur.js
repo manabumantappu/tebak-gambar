@@ -1,5 +1,21 @@
 let score = 0;
 let indexSoal = 0;
+/* =====================
+   AUDIO
+===================== */
+function playBenar() {
+  const a = document.getElementById("soundBenar");
+  if (!a) return;
+  a.currentTime = 0;
+  a.play().catch(() => {});
+}
+
+function playSalah() {
+  const a = document.getElementById("soundSalah");
+  if (!a) return;
+  a.currentTime = 0;
+  a.play().catch(() => {});
+}
 
 /* =====================
    DATA SOAL SAYUR (15)
