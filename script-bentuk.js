@@ -115,6 +115,61 @@ function renderShape(type) {
     case "diamond":
       el.style.transform = "rotate(45deg)";
       break;
+         /* =====================
+     ⬇️ TAMBAHKAN MULAI DI SINI
+  ===================== */
+
+  case "equilateral":
+    el.style.width = "0";
+    el.style.height = "0";
+    el.style.borderLeft = "80px solid transparent";
+    el.style.borderRight = "80px solid transparent";
+    el.style.borderBottom = "140px solid #42a5f5";
+    el.style.background = "transparent";
+    break;
+
+  case "octagon":
+    el.innerText = "🛑";
+    el.style.fontSize = "7rem";
+    el.style.background = "transparent";
+    el.style.display = "flex";
+    el.style.alignItems = "center";
+    el.style.justifyContent = "center";
+    break;
+
+  case "half-circle":
+    el.style.width = "160px";
+    el.style.height = "80px";
+    el.style.borderRadius = "160px 160px 0 0";
+    break;
+
+  case "ring":
+    el.style.borderRadius = "50%";
+    el.style.border = "20px solid #42a5f5";
+    el.style.background = "transparent";
+    break;
+
+  case "spiral":
+    el.innerText = "➰";
+    el.style.fontSize = "7rem";
+    el.style.background = "transparent";
+    el.style.display = "flex";
+    el.style.alignItems = "center";
+    el.style.justifyContent = "center";
+    break;
+
+  case "infinity":
+    el.innerText = "♾️";
+    el.style.fontSize = "7rem";
+    el.style.background = "transparent";
+    el.style.display = "flex";
+    el.style.alignItems = "center";
+    el.style.justifyContent = "center";
+    break;
+
+  /* =====================
+     ⬆️ SAMPAI DI SINI
+  ===================== */
     case "star":
       el.innerText = "⭐";
       el.style.fontSize = "7rem";
