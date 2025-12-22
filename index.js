@@ -27,3 +27,15 @@ menuButtons.forEach(btn => {
     clickSound.play();
   });
 });
+/* =====================
+   ANIMASI MASUK HALAMAN
+===================== */
+window.addEventListener("load", () => {
+  const items = document.querySelectorAll(".animate");
+
+  items.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add("show");
+    }, index * 120); // muncul satu-satu
+  });
+});
