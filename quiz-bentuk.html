@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Bentuk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔺 Quiz Bentuk</h1>
+  <p>Ayo tebak bentuk yang benar ✨</p>
+</header>
+
+<!-- TOMBOL KEMBALI -->
+<div class="back-menu">
+  <a href="index.html">⬅ Kembali ke Menu</a>
+</div>
+
+<!-- LOADING ANIMASI -->
+<div id="loading" class="loading-box">
+  <div class="loader-items">
+    <div class="fruit">◯</div>
+    <div class="fruit">■</div>
+    <div class="fruit">▲</div>
+  </div>
+  <p>Memuat soal...</p>
+</div>
+
+<main class="container">
+
+  <!-- SCORE -->
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <!-- BENTUK -->
+  <div id="shapeBox"
+       style="width:220px;height:220px;margin:20px auto;display:flex;align-items:center;justify-content:center;">
+  </div>
+
+  <!-- PERTANYAAN -->
+  <p id="pertanyaan" style="font-size:1.2rem;font-weight:bold;">
+    Bentuk apakah ini?
+  </p>
+
+  <!-- JAWABAN -->
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<!-- SCRIPT -->
+<script src="script-bentuk.js"></script>
+
+</body>
+</html>
