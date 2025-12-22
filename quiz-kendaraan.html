@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Kendaraan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🚗 Quiz Kendaraan</h1>
+  <p>Ayo tebak nama kendaraan 🛵✈️🚢</p>
+</header>
+
+<!-- TOMBOL KEMBALI -->
+<div class="back-menu">
+  <a href="index.html">⬅ Kembali ke Menu</a>
+</div>
+
+<!-- LOADING -->
+<div id="loading" class="loading-box">
+  <div class="loader-items">
+    <div class="fruit">🚗</div>
+    <div class="fruit">✈️</div>
+    <div class="fruit">🚢</div>
+  </div>
+  <p>Memuat soal...</p>
+</div>
+
+<main class="container">
+
+  <!-- SCORE -->
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <!-- GAMBAR KENDARAAN -->
+  <img id="gambar"
+       src=""
+       alt="Gambar Kendaraan"
+       style="max-width:260px;border-radius:16px;margin:20px auto;display:block;">
+
+  <!-- PERTANYAAN -->
+  <p id="pertanyaan" style="font-size:1.2rem;font-weight:bold;">
+    Kendaraan apakah ini?
+  </p>
+
+  <!-- JAWABAN -->
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<!-- SCRIPT -->
+<script src="script-kendaraan.js"></script>
+
+</body>
+</html>
