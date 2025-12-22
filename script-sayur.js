@@ -94,7 +94,68 @@ const soal = [
     nama: "Jahe",
     opsi: ["Jahe", "Kunyit", "Bawang"],
     info: "🫚 Jahe menghangatkan tubuh."
-  }
+  },
+   {
+  gambar: "images/sayur/paprika.png",
+  nama: "Paprika",
+  opsi: ["Paprika", "Cabai", "Tomat"],
+  info: "🫑 Paprika berwarna merah, kuning, atau hijau."
+},
+{
+  gambar: "images/sayur/sawi.png",
+  nama: "Sawi",
+  opsi: ["Sawi", "Bayam", "Selada"],
+  info: "🥬 Sawi sering dimasak jadi tumisan."
+},
+{
+  gambar: "images/sayur/daun_bawang.png",
+  nama: "Daun Bawang",
+  opsi: ["Daun Bawang", "Seledri", "Bawang"],
+  info: "🌱 Daun bawang sering ditaburkan di atas makanan."
+},
+{
+  gambar: "images/sayur/seledri.png",
+  nama: "Seledri",
+  opsi: ["Seledri", "Daun Bawang", "Bayam"],
+  info: "🌿 Seledri wangi dan sering dipakai di sup."
+},
+{
+  gambar: "images/sayur/pare.png",
+  nama: "Pare",
+  opsi: ["Pare", "Timun", "Labu"],
+  info: "🥒 Pare rasanya pahit tapi sehat."
+},
+{
+  gambar: "images/sayur/kembang_kol.png",
+  nama: "Kembang Kol",
+  opsi: ["Kembang Kol", "Brokoli", "Kubis"],
+  info: "🥦 Kembang kol berwarna putih."
+},
+{
+  gambar: "images/sayur/bit.png",
+  nama: "Bit",
+  opsi: ["Bit", "Tomat", "Kentang"],
+  info: "🍠 Bit berwarna merah keunguan."
+},
+{
+  gambar: "images/sayur/okras.png",
+  nama: "Okra",
+  opsi: ["Okra", "Buncis", "Kacang Panjang"],
+  info: "🌱 Okra sering dipakai dalam masakan Asia."
+},
+{
+  gambar: "images/sayur/buncis.png",
+  nama: "Buncis",
+  opsi: ["Buncis", "Kacang Panjang", "Pare"],
+  info: "🫘 Buncis bentuknya panjang dan hijau."
+},
+{
+  gambar: "images/sayur/kacang_panjang.png",
+  nama: "Kacang Panjang",
+  opsi: ["Kacang Panjang", "Buncis", "Daun Bayam"],
+  info: "🥗 Kacang panjang sering dibuat sayur."
+}
+
 ];
 
 /* =====================
