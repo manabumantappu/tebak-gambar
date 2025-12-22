@@ -107,7 +107,128 @@ const soal = [
     nama: "Brasil",
     opsi: ["Brasil", "Argentina", "Kolombia"],
     info: "Bendera Brasil berwarna hijau dan kuning."
-  }
+  },
+{
+  gambar: "images/bendera/korea-selatan.png",
+  nama: "Korea Selatan",
+  opsi: ["Korea Selatan", "Jepang", "China"],
+  info: "Bendera Korea Selatan disebut Taegeukgi."
+},
+{
+  gambar: "images/bendera/vietnam.png",
+  nama: "Vietnam",
+  opsi: ["Vietnam", "China", "Thailand"],
+  info: "Bendera Vietnam berwarna merah dengan bintang kuning."
+},
+{
+  gambar: "images/bendera/thailand.png",
+  nama: "Thailand",
+  opsi: ["Thailand", "Laos", "Kamboja"],
+  info: "Bendera Thailand memiliki lima garis warna."
+},
+{
+  gambar: "images/bendera/singapura.png",
+  nama: "Singapura",
+  opsi: ["Singapura", "Indonesia", "Malaysia"],
+  info: "Bendera Singapura memiliki bulan sabit dan bintang."
+},
+{
+  gambar: "images/bendera/malaysia.png",
+  nama: "Malaysia",
+  opsi: ["Malaysia", "Amerika Serikat", "Thailand"],
+  info: "Bendera Malaysia memiliki garis merah putih dan bulan sabit."
+},
+{
+  gambar: "images/bendera/filipina.png",
+  nama: "Filipina",
+  opsi: ["Filipina", "Chile", "Ceko"],
+  info: "Bendera Filipina memiliki segitiga putih dengan matahari."
+},
+{
+  gambar: "images/bendera/belanda.png",
+  nama: "Belanda",
+  opsi: ["Belanda", "Prancis", "Luxembourg"],
+  info: "Bendera Belanda berwarna merah, putih, dan biru."
+},
+{
+  gambar: "images/bendera/italia.png",
+  nama: "Italia",
+  opsi: ["Italia", "Prancis", "Irlandia"],
+  info: "Bendera Italia berwarna hijau, putih, dan merah."
+},
+{
+  gambar: "images/bendera/spanyol.png",
+  nama: "Spanyol",
+  opsi: ["Spanyol", "Portugal", "Meksiko"],
+  info: "Bendera Spanyol berwarna merah dan kuning."
+},
+{
+  gambar: "images/bendera/portugal.png",
+  nama: "Portugal",
+  opsi: ["Portugal", "Spanyol", "Brasil"],
+  info: "Bendera Portugal berwarna hijau dan merah."
+},
+{
+  gambar: "images/bendera/meksiko.png",
+  nama: "Meksiko",
+  opsi: ["Meksiko", "Brasil", "Kolombia"],
+  info: "Bendera Meksiko memiliki gambar elang di tengah."
+},
+{
+  gambar: "images/bendera/argentina.png",
+  nama: "Argentina",
+  opsi: ["Argentina", "Uruguay", "Brasil"],
+  info: "Bendera Argentina berwarna biru muda dan putih."
+},
+{
+  gambar: "images/bendera/kolombia.png",
+  nama: "Kolombia",
+  opsi: ["Kolombia", "Venezuela", "Ekuador"],
+  info: "Bendera Kolombia berwarna kuning, biru, dan merah."
+},
+{
+  gambar: "images/bendera/mesir.png",
+  nama: "Mesir",
+  opsi: ["Mesir", "Irak", "Suriah"],
+  info: "Bendera Mesir berwarna merah, putih, dan hitam."
+},
+{
+  gambar: "images/bendera/arab-saudi.png",
+  nama: "Arab Saudi",
+  opsi: ["Arab Saudi", "Pakistan", "Turki"],
+  info: "Bendera Arab Saudi berwarna hijau dengan tulisan Arab."
+},
+{
+  gambar: "images/bendera/turki.png",
+  nama: "Turki",
+  opsi: ["Turki", "Pakistan", "Tunisia"],
+  info: "Bendera Turki memiliki bulan sabit dan bintang."
+},
+{
+  gambar: "images/bendera/rusia.png",
+  nama: "Rusia",
+  opsi: ["Rusia", "Belanda", "Prancis"],
+  info: "Bendera Rusia berwarna putih, biru, dan merah."
+},
+{
+  gambar: "images/bendera/india.png",
+  nama: "India",
+  opsi: ["India", "Irlandia", "Niger"],
+  info: "Bendera India memiliki roda biru di tengah."
+},
+{
+  gambar: "images/bendera/pakistan.png",
+  nama: "Pakistan",
+  opsi: ["Pakistan", "Turki", "Arab Saudi"],
+  info: "Bendera Pakistan berwarna hijau dengan bulan sabit."
+},
+{
+  gambar: "images/bendera/afrika-selatan.png",
+  nama: "Afrika Selatan",
+  opsi: ["Afrika Selatan", "Kenya", "Zimbabwe"],
+  info: "Bendera Afrika Selatan memiliki banyak warna."
+}
+
 ];
 
 /* =====================
