@@ -72,39 +72,44 @@ const soal = [
     info: "🏠 いえ (ie) = rumah"
   },
   {
-    gambar: "images/jepang/book.png",
-    tanya: "📘 Dalam bahasa Jepang, ini disebut apa?",
-    opsi: ["ほん", "えんぴつ", "かばん"],
-    info: "ほん (hon) artinya buku"
-  },
-  {
-    gambar: "images/jepang/water.png",
-    tanya: "💧 Dalam bahasa Jepang, ini disebut apa?",
-    opsi: ["みず", "おちゃ", "ぎゅうにゅう"],
-    info: "みず (mizu) artinya air"
-  },
+  gambar: "images/jepang/book.png",
+  tanya: "📘 Dalam bahasa Jepang, ini disebut apa?",
+  jawaban: "ほん",
+  opsi: ["ほん", "えんぴつ", "かばん"],
+  info: "ほん (hon) artinya buku"
+},
+ {
+  gambar: "images/jepang/water.png",
+  tanya: "💧 Dalam bahasa Jepang, ini disebut apa?",
+  jawaban: "みず",
+  opsi: ["みず", "おちゃ", "ぎゅうにゅう"],
+  info: "みず (mizu) artinya air"
+},
   {
     gambar: "images/jepang/rice.png",
     tanya: "🍚 Dalam bahasa Jepang, ini disebut apa?",
+    jawaban: "ごはん",
     opsi: ["ぱん", "ごはん", "めん"],
     info: "ごはん (gohan) artinya nasi"
   },
   {
     gambar: "images/jepang/milk.png",
     tanya: "🥛 Dalam bahasa Jepang, ini disebut apa?",
+    jawaban: "ぎゅうにゅう",
     opsi: ["みず", "ぎゅうにゅう", "おちゃ"],
     info: "ぎゅうにゅう (gyuunyuu) artinya susu"
   },
   {
     gambar: "images/jepang/school.png",
     tanya: "🏫 Dalam bahasa Jepang, ini disebut apa?",
+    jawaban: "がっこう",
     opsi: ["がっこう", "いえ", "こうえん"],
-    benar: 0,
     info: "がっこう (gakkou) artinya sekolah"
   },
   {
     gambar: "images/jepang/house.png",
     tanya: "🏠 Dalam bahasa Jepang, ini disebut apa?",
+    jawaban: "いえ",
     opsi: ["がっこう", "いえ", "みせ"],
     info: "いえ (ie) artinya rumah"
   }
