@@ -108,10 +108,20 @@ function tampilSoal() {
    JAWAB
 ===================== */
 function jawab(benar) {
-  if (benar) score++;
+  unlockAudio();
+
+  if (benar) {
+    score++;
+    document.getElementById("score").innerText = score;
+    playBenar();
+  } else {
+    playSalah();
+  }
+
   indexSoal++;
   tampilSoal();
 }
+
 
 /* =====================
    NAIK LEVEL
