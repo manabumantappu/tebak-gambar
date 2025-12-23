@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Kosakata Jepang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🇯🇵 Quiz Kosakata Jepang</h1>
+  <p>Ayo tebak kata bahasa Jepang dari gambarnya 🎌</p>
+</header>
+
+<div class="back-menu">
+  <a href="index.html">⬅ Kembali ke Menu</a>
+</div>
+
+<div id="loading" class="loading-box">
+  <div class="fruit">🇯🇵</div>
+  <div class="fruit">🍎</div>
+  <div class="fruit">🐶</div>
+  <p>Memuat soal...</p>
+</div>
+
+<main class="container">
+
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <img id="gambar"
+       src=""
+       alt="Gambar Kosakata"
+       style="max-width:260px;border-radius:20px;margin:15px auto;display:block;">
+
+  <p id="pertanyaan" style="font-size:1.2rem;font-weight:bold;">
+    Dalam bahasa Jepang, ini apa?
+  </p>
+
+  <div id="jawaban"></div>
+
+</main>
+
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<script src="script-jepang.js"></script>
+
+</body>
+</html>
