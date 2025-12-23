@@ -110,17 +110,29 @@ function tampilSoal() {
 function jawab(benar) {
   unlockAudio();
 
+  const feedback = document.getElementById("feedback");
+
   if (benar) {
     score++;
     document.getElementById("score").innerText = score;
+    feedback.innerHTML = "⭐ BENAR!";
+    feedback.style.color = "#4caf50";
     playBenar();
   } else {
+    feedback.innerHTML = "😅 SALAH";
+    feedback.style.color = "#e53935";
     playSalah();
   }
 
   indexSoal++;
-  tampilSoal();
+
+  // lanjut soal setelah 600ms
+  setTimeout(() => {
+    feedback.innerHTML = "";
+    tampilSoal();
+  }, 600);
 }
+
 
 
 /* =====================
