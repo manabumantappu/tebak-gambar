@@ -75,28 +75,24 @@ const soal = [
     gambar: "images/jepang/book.png",
     tanya: "📘 Dalam bahasa Jepang, ini disebut apa?",
     opsi: ["ほん", "えんぴつ", "かばん"],
-    benar: 0,
     info: "ほん (hon) artinya buku"
   },
   {
     gambar: "images/jepang/water.png",
     tanya: "💧 Dalam bahasa Jepang, ini disebut apa?",
     opsi: ["みず", "おちゃ", "ぎゅうにゅう"],
-    benar: 0,
     info: "みず (mizu) artinya air"
   },
   {
     gambar: "images/jepang/rice.png",
     tanya: "🍚 Dalam bahasa Jepang, ini disebut apa?",
     opsi: ["ぱん", "ごはん", "めん"],
-    benar: 1,
     info: "ごはん (gohan) artinya nasi"
   },
   {
     gambar: "images/jepang/milk.png",
     tanya: "🥛 Dalam bahasa Jepang, ini disebut apa?",
     opsi: ["みず", "ぎゅうにゅう", "おちゃ"],
-    benar: 1,
     info: "ぎゅうにゅう (gyuunyuu) artinya susu"
   },
   {
@@ -110,7 +106,6 @@ const soal = [
     gambar: "images/jepang/house.png",
     tanya: "🏠 Dalam bahasa Jepang, ini disebut apa?",
     opsi: ["がっこう", "いえ", "みせ"],
-    benar: 1,
     info: "いえ (ie) artinya rumah"
   }
 ];
