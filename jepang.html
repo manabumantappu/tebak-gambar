@@ -23,35 +23,43 @@
 <main class="home-grid">
 
   <!-- HIRAGANA -->
-  <a href="quiz-hiragana.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-hiragana.html" class="menu-card jepang menu-btn">
     <div class="icon">🔤</div>
     <h2>Hiragana</h2>
     <p>あ い う え お</p>
   </a>
 
   <!-- KATAKANA -->
-  <a href="quiz-katakana.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-katakana.html" class="menu-card jepang menu-btn">
     <div class="icon">🔠</div>
     <h2>Katakana</h2>
     <p>ア イ ウ エ オ</p>
   </a>
 
   <!-- KOSAKATA -->
-  <a href="quiz-jepang.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-jepang.html" class="menu-card jepang menu-btn">
     <div class="icon">🖼️</div>
     <h2>Kosakata Jepang</h2>
     <p>Tebak gambar & arti</p>
   </a>
 
   <!-- KANJI -->
-  <a href="quiz-kanji.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-kanji.html" class="menu-card jepang menu-btn">
     <div class="icon">🈴</div>
     <h2>Kanji Dasar</h2>
     <p>Kanji + arti</p>
   </a>
 
 </main>
-
+  
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".animate").forEach(el => {
+      setTimeout(() => el.classList.add("show"), 100);
+    });
+  });
+</script>
+  
 <footer class="home-footer">
   <p>© Quiz Edukasi Anak</p>
 </footer>
