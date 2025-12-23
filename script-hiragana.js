@@ -128,5 +128,35 @@ function naikLevel() {
        <button class="btn" onclick="location.reload()">🔄 Main Lagi</button>`;
   }
 }
+/* =====================
+   AUDIO BENAR / SALAH
+===================== */
+let audioUnlocked = false;
+
+function unlockAudio() {
+  if (audioUnlocked) return;
+  const a = document.getElementById("soundBenar");
+  if (!a) return;
+
+  a.play().then(() => {
+    a.pause();
+    a.currentTime = 0;
+    audioUnlocked = true;
+  }).catch(() => {});
+}
+
+function playBenar() {
+  const a = document.getElementById("soundBenar");
+  if (!a) return;
+  a.currentTime = 0;
+  a.play();
+}
+
+function playSalah() {
+  const a = document.getElementById("soundSalah");
+  if (!a) return;
+  a.currentTime = 0;
+  a.play();
+}
 
 document.addEventListener("DOMContentLoaded", tampilSoal);
