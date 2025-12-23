@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Hiragana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔤 Quiz Hiragana</h1>
+  <p>Tebak huruf hiragana 🎌</p>
+</header>
+
+<div class="back-menu">
+  <a href="jepang.html">⬅ Kembali ke Bahasa Jepang</a>
+</div>
+
+<main class="container">
+
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <div id="huruf" style="font-size:5rem;font-weight:bold;margin:20px 0;">
+    あ
+  </div>
+
+  <p id="pertanyaan">Huruf ini dibaca apa?</p>
+
+  <div id="jawaban"></div>
+
+</main>
+
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<audio id="soundBenar" src="audio/benar.wav"></audio>
+<audio id="soundSalah" src="audio/salah.wav"></audio>
+
+<script src="script-hiragana.js"></script>
+</body>
+</html>
