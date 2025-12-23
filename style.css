@@ -261,6 +261,16 @@ footer {
   transform: scale(0.96);
 }
 
+.menu-card {
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+}
+
 /* ===== VISITOR COUNTER ===== */
 .visitor-box {
   margin: 15px auto;
