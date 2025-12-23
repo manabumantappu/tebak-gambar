@@ -70,6 +70,48 @@ const soal = [
     jawaban: "いえ",
     opsi: ["がっこう", "いえ", "みせ"],
     info: "🏠 いえ (ie) = rumah"
+  },
+  {
+    gambar: "images/jepang/book.png",
+    tanya: "📘 Dalam bahasa Jepang, ini disebut apa?",
+    opsi: ["ほん", "えんぴつ", "かばん"],
+    benar: 0,
+    info: "ほん (hon) artinya buku"
+  },
+  {
+    gambar: "images/jepang/water.png",
+    tanya: "💧 Dalam bahasa Jepang, ini disebut apa?",
+    opsi: ["みず", "おちゃ", "ぎゅうにゅう"],
+    benar: 0,
+    info: "みず (mizu) artinya air"
+  },
+  {
+    gambar: "images/jepang/rice.png",
+    tanya: "🍚 Dalam bahasa Jepang, ini disebut apa?",
+    opsi: ["ぱん", "ごはん", "めん"],
+    benar: 1,
+    info: "ごはん (gohan) artinya nasi"
+  },
+  {
+    gambar: "images/jepang/milk.png",
+    tanya: "🥛 Dalam bahasa Jepang, ini disebut apa?",
+    opsi: ["みず", "ぎゅうにゅう", "おちゃ"],
+    benar: 1,
+    info: "ぎゅうにゅう (gyuunyuu) artinya susu"
+  },
+  {
+    gambar: "images/jepang/school.png",
+    tanya: "🏫 Dalam bahasa Jepang, ini disebut apa?",
+    opsi: ["がっこう", "いえ", "こうえん"],
+    benar: 0,
+    info: "がっこう (gakkou) artinya sekolah"
+  },
+  {
+    gambar: "images/jepang/house.png",
+    tanya: "🏠 Dalam bahasa Jepang, ini disebut apa?",
+    opsi: ["がっこう", "いえ", "みせ"],
+    benar: 1,
+    info: "いえ (ie) artinya rumah"
   }
 ];
 
