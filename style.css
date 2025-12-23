@@ -418,4 +418,11 @@ footer {
 .support-btn:hover {
   transform: translateY(-2px);
 }
+/* ===== HOME GRID FIX (WAJIB) ===== */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
 
