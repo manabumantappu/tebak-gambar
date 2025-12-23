@@ -15,68 +15,64 @@ function playSalah() {
 }
 
 /* =====================
-   DATA SOAL KANJI DASAR
+   DATA SOAL KANJI (DENGAN FURIGANA)
 ===================== */
 const soal = [
   {
     kanji: "日",
-    jawaban: "matahari / hari",
-    opsi: ["bulan", "air", "matahari / hari"],
-    info: "日 (nichi / hi) = matahari, hari"
+    furigana: "にち",
+    romaji: "nichi / hi",
+    arti: "matahari / hari",
+    opsi: ["bulan", "air", "matahari / hari"]
   },
   {
     kanji: "月",
-    jawaban: "bulan",
-    opsi: ["bulan", "matahari", "api"],
-    info: "月 (tsuki / getsu) = bulan"
+    furigana: "つき",
+    romaji: "tsuki",
+    arti: "bulan",
+    opsi: ["bulan", "matahari", "api"]
   },
   {
     kanji: "水",
-    jawaban: "air",
-    opsi: ["api", "air", "tanah"],
-    info: "水 (mizu) = air"
+    furigana: "みず",
+    romaji: "mizu",
+    arti: "air",
+    opsi: ["api", "air", "tanah"]
   },
   {
     kanji: "火",
-    jawaban: "api",
-    opsi: ["api", "air", "angin"],
-    info: "火 (hi) = api"
+    furigana: "ひ",
+    romaji: "hi",
+    arti: "api",
+    opsi: ["api", "air", "angin"]
   },
   {
     kanji: "木",
-    jawaban: "pohon",
-    opsi: ["gunung", "pohon", "air"],
-    info: "木 (ki) = pohon"
+    furigana: "き",
+    romaji: "ki",
+    arti: "pohon",
+    opsi: ["gunung", "pohon", "air"]
   },
   {
     kanji: "山",
-    jawaban: "gunung",
-    opsi: ["sungai", "gunung", "langit"],
-    info: "山 (yama) = gunung"
+    furigana: "やま",
+    romaji: "yama",
+    arti: "gunung",
+    opsi: ["sungai", "gunung", "langit"]
   },
   {
     kanji: "川",
-    jawaban: "sungai",
-    opsi: ["laut", "danau", "sungai"],
-    info: "川 (kawa) = sungai"
+    furigana: "かわ",
+    romaji: "kawa",
+    arti: "sungai",
+    opsi: ["laut", "danau", "sungai"]
   },
   {
     kanji: "人",
-    jawaban: "orang",
-    opsi: ["anak", "orang", "guru"],
-    info: "人 (hito) = orang"
-  },
-  {
-    kanji: "口",
-    jawaban: "mulut",
-    opsi: ["telinga", "mata", "mulut"],
-    info: "口 (kuchi) = mulut"
-  },
-  {
-    kanji: "目",
-    jawaban: "mata",
-    opsi: ["hidung", "mata", "mulut"],
-    info: "目 (me) = mata"
+    furigana: "ひと",
+    romaji: "hito",
+    arti: "orang",
+    opsi: ["anak", "orang", "guru"]
   }
 ];
 
@@ -103,7 +99,7 @@ function tampilSoal() {
     const btn = document.createElement("button");
     btn.className = "btn";
     btn.innerText = op;
-    btn.onclick = () => jawab(op === s.jawaban);
+    btn.onclick = () => jawab(op === s.arti);
     document.getElementById("jawaban").appendChild(btn);
   });
 }
@@ -115,6 +111,7 @@ function jawab(benar) {
   const popup = document.getElementById("popup");
   const title = document.getElementById("popupTitle");
   const text = document.getElementById("popupText");
+  const s = soal[indexSoal];
 
   if (benar) {
     score++;
@@ -126,7 +123,12 @@ function jawab(benar) {
     playSalah();
   }
 
-  text.innerText = soal[indexSoal].info;
+  text.innerHTML = `
+    <strong style="font-size:2rem">${s.kanji}</strong><br>
+    ${s.furigana} (${s.romaji})<br>
+    artinya: <b>${s.arti}</b>
+  `;
+
   popup.classList.remove("hidden");
   indexSoal++;
 }
