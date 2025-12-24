@@ -65,7 +65,88 @@ const soal = [
     romaji: "kawa",
     arti: "sungai",
     opsi: ["danau", "hutan", "sungai"]
-  }
+  },
+   // ===== KANJI ALAM LANJUTAN =====
+{
+  kanji: "森",
+  baca: "もり",
+  romaji: "mori",
+  arti: "hutan",
+  opsi: ["hutan", "gunung", "laut"],
+  benar: 0
+},
+{
+  kanji: "林",
+  baca: "はやし",
+  romaji: "hayashi",
+  arti: "rimba / pepohonan",
+  opsi: ["pepohonan", "sungai", "langit"],
+  benar: 0
+},
+{
+  kanji: "雲",
+  baca: "くも",
+  romaji: "kumo",
+  arti: "awan",
+  opsi: ["awan", "angin", "hujan"],
+  benar: 0
+},
+{
+  kanji: "土",
+  baca: "つち",
+  romaji: "tsuchi",
+  arti: "tanah",
+  opsi: ["tanah", "air", "api"],
+  benar: 0
+},
+{
+  kanji: "石",
+  baca: "いし",
+  romaji: "ishi",
+  arti: "batu",
+  opsi: ["pasir", "batu", "gunung"],
+  benar: 1
+},
+{
+  kanji: "砂",
+  baca: "すな",
+  romaji: "suna",
+  arti: "pasir",
+  opsi: ["tanah", "pasir", "batu"],
+  benar: 1
+},
+{
+  kanji: "晴",
+  baca: "はれ",
+  romaji: "hare",
+  arti: "cerah",
+  opsi: ["hujan", "cerah", "mendung"],
+  benar: 1
+},
+{
+  kanji: "雨",
+  baca: "あめ",
+  romaji: "ame",
+  arti: "hujan",
+  opsi: ["angin", "salju", "hujan"],
+  benar: 2
+},
+{
+  kanji: "雪",
+  baca: "ゆき",
+  romaji: "yuki",
+  arti: "salju",
+  opsi: ["hujan", "salju", "es"],
+  benar: 1
+},
+{
+  kanji: "星",
+  baca: "ほし",
+  romaji: "hoshi",
+  arti: "bintang",
+  opsi: ["bulan", "matahari", "bintang"],
+  benar: 2
+}
 ];
 
 /* =====================
