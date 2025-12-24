@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Kanji Anggota Tubuh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🧍‍♂️ Quiz Kanji Anggota Tubuh</h1>
+  <p>Kanji bagian tubuh manusia</p>
+</header>
+
+<div class="back-menu">
+  <a href="kanji.html">⬅ Kembali ke Menu Kanji</a>
+</div>
+
+<main class="container">
+
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <div id="kanji" style="font-size:5rem;font-weight:bold;margin:20px 0;">
+    頭
+  </div>
+
+  <p id="pertanyaan">Kanji ini artinya?</p>
+
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button class="btn" onclick="tutupPopup()">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<script src="script-kanji-tubuh.js"></script>
+</body>
+</html>
