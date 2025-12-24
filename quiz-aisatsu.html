@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Aisatsu Jepang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🇯🇵 Quiz Aisatsu</h1>
+  <p>Salam & ungkapan sehari-hari</p>
+</header>
+
+<div class="back-menu">
+  <a href="jepang.html">⬅ Kembali ke Bahasa Jepang</a>
+</div>
+
+<main class="container">
+
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <p id="pertanyaan">Memuat soal...</p>
+
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button class="btn" onclick="tutupPopup()">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<script src="script-aisatsu.js"></script>
+</body>
+</html>
