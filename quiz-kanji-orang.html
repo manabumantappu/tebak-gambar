@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanji Orang & Keluarga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🈴 Kanji Orang & Keluarga</h1>
+  <p>Belajar kanji dasar N5 👨‍👩‍👧</p>
+</header>
+
+<div class="back-menu">
+  <a href="jepang.html">⬅ Kembali ke Bahasa Jepang</a>
+</div>
+
+<div id="loading" class="loading-box">
+  <div class="fruit">🈴</div>
+  <div class="fruit">👨</div>
+  <div class="fruit">⭐</div>
+  <p>Memuat soal...</p>
+</div>
+
+<main class="container">
+
+  <div class="score-box">
+    ⭐ Skor: <span id="score">0</span>
+  </div>
+
+  <div id="kanji"
+       style="font-size:5rem;font-weight:bold;margin:20px 0;">
+    人
+  </div>
+
+  <p id="pertanyaan">Kanji ini artinya apa?</p>
+
+  <div id="jawaban"></div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()" class="btn">OK 👍</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="soundBenar" src="audio/benar.wav" preload="auto"></audio>
+<audio id="soundSalah" src="audio/salah.wav" preload="auto"></audio>
+
+<script src="script-kanji-orang.js"></script>
+</body>
+</html>
