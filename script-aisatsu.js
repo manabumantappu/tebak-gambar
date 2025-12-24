@@ -76,7 +76,68 @@ const soal = [
     opsi: ["Selamat pagi", "Selamat tidur", "Selamat datang"],
     benar: "Selamat tidur",
     info: "😴 おやすみなさい = Selamat tidur"
-  }
+  },
+   // ===== TAMBAHAN SOAL AISATSU =====
+{
+  tanya: "「はじめまして」digunakan saat?",
+  opsi: ["Bertemu pertama kali", "Berpisah", "Makan"],
+  benar: 0,
+  info: "🤝 はじめまして = Senang bertemu dengan Anda (pertama kali)"
+},
+{
+  tanya: "「どうぞよろしく」artinya?",
+  opsi: ["Tolong dijaga", "Mohon kerja samanya", "Silakan duduk"],
+  benar: 1,
+  info: "🙏 どうぞよろしく = Mohon kerja samanya"
+},
+{
+  tanya: "「いただきます」diucapkan saat?",
+  opsi: ["Selesai makan", "Mulai makan", "Masuk rumah"],
+  benar: 1,
+  info: "🍽️ いただきます = Diucapkan sebelum makan"
+},
+{
+  tanya: "「ごちそうさまでした」diucapkan saat?",
+  opsi: ["Sebelum makan", "Sesudah makan", "Pagi hari"],
+  benar: 1,
+  info: "😋 ごちそうさまでした = Terima kasih atas makanannya"
+},
+{
+  tanya: "「いらっしゃいませ」biasanya diucapkan oleh?",
+  opsi: ["Tamu", "Guru", "Penjual"],
+  benar: 2,
+  info: "🏪 いらっしゃいませ = Selamat datang (di toko/restoran)"
+},
+{
+  tanya: "「おかえりなさい」diucapkan saat?",
+  opsi: ["Pergi dari rumah", "Pulang ke rumah", "Tidur"],
+  benar: 1,
+  info: "🏠 おかえりなさい = Selamat datang kembali"
+},
+{
+  tanya: "「いってらっしゃい」diucapkan saat?",
+  opsi: ["Seseorang pergi", "Seseorang pulang", "Makan"],
+  benar: 0,
+  info: "👋 いってらっしゃい = Hati-hati di jalan"
+},
+{
+  tanya: "「すごい！」artinya?",
+  opsi: ["Biasa saja", "Hebat!", "Sedih"],
+  benar: 1,
+  info: "✨ すごい！ = Hebat! / Keren!"
+},
+{
+  tanya: "「だいじょうぶ」artinya?",
+  opsi: ["Tidak apa-apa", "Sakit", "Marah"],
+  benar: 0,
+  info: "👌 だいじょうぶ = Tidak apa-apa"
+},
+{
+  tanya: "「おつかれさま」biasanya diucapkan saat?",
+  opsi: ["Bertemu pagi", "Setelah bekerja/belajar", "Saat tidur"],
+  benar: 1,
+  info: "💼 おつかれさま = Terima kasih atas kerja kerasnya"
+}
 ];
 
 /* =====================
