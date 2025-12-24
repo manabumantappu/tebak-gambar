@@ -22,63 +22,72 @@ const soal = [
     baca: "ひ / にち",
     romaji: "hi / nichi",
     arti: "hari / matahari",
-    opsi: ["hari", "bulan", "tahun"]
+    opsi: ["hari", "bulan", "tahun"],
+    benar: 0
   },
   {
     kanji: "月",
     baca: "つき / げつ",
     romaji: "tsuki / getsu",
     arti: "bulan",
-    opsi: ["minggu", "bulan", "tahun"]
+    opsi: ["minggu", "bulan", "tahun"],
+    benar: 1
   },
   {
     kanji: "年",
     baca: "とし / ねん",
     romaji: "toshi / nen",
     arti: "tahun",
-    opsi: ["tahun", "hari", "jam"]
+    opsi: ["tahun", "hari", "jam"],
+    benar: 0
   },
   {
     kanji: "時",
     baca: "じ",
     romaji: "ji",
     arti: "jam / waktu",
-    opsi: ["menit", "jam", "hari"]
+    opsi: ["menit", "jam", "hari"],
+    benar: 1
   },
   {
     kanji: "分",
     baca: "ふん / ぷん",
     romaji: "fun / pun",
     arti: "menit",
-    opsi: ["detik", "jam", "menit"]
+    opsi: ["detik", "jam", "menit"],
+    benar: 2
   },
   {
     kanji: "週",
     baca: "しゅう",
     romaji: "shuu",
     arti: "minggu",
-    opsi: ["bulan", "minggu", "tahun"]
+    opsi: ["bulan", "minggu", "tahun"],
+    benar: 1
   },
   {
     kanji: "今",
     baca: "いま",
     romaji: "ima",
     arti: "sekarang",
-    opsi: ["kemarin", "besok", "sekarang"]
+    opsi: ["kemarin", "besok", "sekarang"],
+    benar: 2
   },
   {
     kanji: "先",
     baca: "さき",
     romaji: "saki",
     arti: "sebelum / dulu",
-    opsi: ["sekarang", "sebelum", "nanti"]
+    opsi: ["sekarang", "sebelum", "nanti"],
+    benar: 1
   },
   {
     kanji: "毎",
     baca: "まい",
     romaji: "mai",
     arti: "setiap",
-    opsi: ["kadang", "setiap", "jarang"]
+    opsi: ["kadang", "setiap", "jarang"],
+    benar: 1
   }
 ];
 
@@ -101,13 +110,13 @@ function tampilSoal() {
   document.getElementById("kanji").innerText = s.kanji;
   document.getElementById("jawaban").innerHTML = "";
 
-  s.opsi.forEach(op => {
-    const btn = document.createElement("button");
-    btn.className = "btn";
-    btn.innerText = op;
-    btn.onclick = () => jawab(op === s.arti);
-    document.getElementById("jawaban").appendChild(btn);
-  });
+  s.opsi.forEach((op, i) => {
+  const btn = document.createElement("button");
+  btn.className = "btn";
+  btn.innerText = op;
+  btn.onclick = () => jawab(i === s.benar);
+  document.getElementById("jawaban").appendChild(btn);
+});
 }
 
 /* =====================
