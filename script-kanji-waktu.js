@@ -88,7 +88,128 @@ const soal = [
     arti: "setiap",
     opsi: ["kadang", "setiap", "jarang"],
     benar: 1
-  }
+  },
+   // ===== TAMBAHAN SOAL WAKTU N5 =====
+{
+  kanji: "今朝",
+  baca: "けさ",
+  romaji: "kesa",
+  arti: "pagi ini",
+  opsi: ["pagi ini", "malam ini", "besok pagi"],
+  benar: 0
+},
+{
+  kanji: "今晩",
+  baca: "こんばん",
+  romaji: "konban",
+  arti: "malam ini",
+  opsi: ["kemarin malam", "malam ini", "besok malam"],
+  benar: 1
+},
+{
+  kanji: "今日",
+  baca: "きょう",
+  romaji: "kyou",
+  arti: "hari ini",
+  opsi: ["kemarin", "hari ini", "besok"],
+  benar: 1
+},
+{
+  kanji: "昨日",
+  baca: "きのう",
+  romaji: "kinou",
+  arti: "kemarin",
+  opsi: ["kemarin", "hari ini", "besok"],
+  benar: 0
+},
+{
+  kanji: "明日",
+  baca: "あした",
+  romaji: "ashita",
+  arti: "besok",
+  opsi: ["hari ini", "besok", "lusa"],
+  benar: 1
+},
+{
+  kanji: "朝",
+  baca: "あさ",
+  romaji: "asa",
+  arti: "pagi",
+  opsi: ["pagi", "siang", "malam"],
+  benar: 0
+},
+{
+  kanji: "昼",
+  baca: "ひる",
+  romaji: "hiru",
+  arti: "siang",
+  opsi: ["pagi", "siang", "malam"],
+  benar: 1
+},
+{
+  kanji: "夜",
+  baca: "よる",
+  romaji: "yoru",
+  arti: "malam",
+  opsi: ["pagi", "siang", "malam"],
+  benar: 2
+},
+{
+  kanji: "先週",
+  baca: "せんしゅう",
+  romaji: "senshuu",
+  arti: "minggu lalu",
+  opsi: ["minggu ini", "minggu lalu", "minggu depan"],
+  benar: 1
+},
+{
+  kanji: "来週",
+  baca: "らいしゅう",
+  romaji: "raishuu",
+  arti: "minggu depan",
+  opsi: ["minggu lalu", "minggu ini", "minggu depan"],
+  benar: 2
+},
+{
+  kanji: "今月",
+  baca: "こんげつ",
+  romaji: "kongetsu",
+  arti: "bulan ini",
+  opsi: ["bulan lalu", "bulan ini", "bulan depan"],
+  benar: 1
+},
+{
+  kanji: "来月",
+  baca: "らいげつ",
+  romaji: "raigetsu",
+  arti: "bulan depan",
+  opsi: ["bulan lalu", "bulan ini", "bulan depan"],
+  benar: 2
+},
+{
+  kanji: "午前",
+  baca: "ごぜん",
+  romaji: "gozen",
+  arti: "pagi (AM)",
+  opsi: ["pagi (AM)", "siang", "malam"],
+  benar: 0
+},
+{
+  kanji: "午後",
+  baca: "ごご",
+  romaji: "gogo",
+  arti: "sore (PM)",
+  opsi: ["pagi", "sore (PM)", "malam"],
+  benar: 1
+},
+{
+  kanji: "半",
+  baca: "はん",
+  romaji: "han",
+  arti: "setengah",
+  opsi: ["setengah", "jam", "menit"],
+  benar: 0
+}
 ];
 
 /* =====================
