@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Kanji Jepang</title>
+  <title>Menu Kanji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,8 +10,8 @@
 <body>
 
 <header class="home-header">
-  <h1>🈴 Kanji Jepang</h1>
-  <p>Pilih kategori kanji JLPT N5</p>
+  <h1>🈴 Menu Kanji</h1>
+  <p>Pilih kategori belajar kanji</p>
 </header>
 
 <div class="back-menu">
@@ -20,53 +20,59 @@
 
 <main class="home-grid">
 
-  <a href="quiz-kanji-orang.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-kanji-orang.html" class="menu-card jepang animate">
     <div class="icon">👨‍👩‍👧</div>
     <h2>Kanji Orang</h2>
     <p>人・男・女・子</p>
   </a>
 
-  <a href="quiz-kanji-angka.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-kanji-angka.html" class="menu-card jepang animate">
     <div class="icon">🔢</div>
     <h2>Kanji Angka</h2>
-    <p>一・二・三・十</p>
+    <p>一 二 三 十</p>
   </a>
 
-  <a href="quiz-kanji-waktu.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-kanji-waktu.html" class="menu-card jepang animate">
     <div class="icon">⏰</div>
     <h2>Kanji Waktu</h2>
-    <p>日・月・年・時</p>
+    <p>日 月 年</p>
   </a>
 
-  <a href="quiz-kanji-tempat.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-kanji-tempat.html" class="menu-card jepang animate">
     <div class="icon">🏫</div>
     <h2>Kanji Tempat</h2>
-    <p>学校・家・駅</p>
+    <p>学校 家 駅</p>
   </a>
 
-  <a href="quiz-kanji-transport.html" class="menu-card jepang menu-btn animate">
-    <div class="icon">🚗</div>
+  <a href="quiz-kanji-transport.html" class="menu-card jepang animate">
+    <div class="icon">🚃</div>
     <h2>Kanji Transportasi</h2>
-    <p>車・電車・船</p>
+    <p>車 電車</p>
   </a>
 
-  <a href="quiz-kanji-sifat.html" class="menu-card jepang menu-btn animate">
+  <a href="quiz-kanji-sifat.html" class="menu-card jepang animate">
     <div class="icon">✨</div>
     <h2>Kanji Sifat</h2>
-    <p>大・小・新・安</p>
+    <p>大 小 新</p>
   </a>
 
-  <a href="quiz-kanji.html" class="menu-card jepang menu-btn animate">
-  <div class="icon">🎯</div>
-  <h2>Try Out Kanji N5</h2>
-  <p>Ujian gabungan semua kanji</p>
-</a>
+  <a href="quiz-kanji.html" class="menu-card planet animate">
+    <div class="icon">🎯</div>
+    <h2>Try Out Kanji N5</h2>
+    <p>Mode Ujian</p>
+  </a>
 
 </main>
 
 <footer class="home-footer">
   <p>© Quiz Edukasi Anak</p>
 </footer>
+
+<script>
+  document.querySelectorAll('.animate').forEach((el,i)=>{
+    setTimeout(()=>el.classList.add('show'), i*100);
+  });
+</script>
 
 </body>
 </html>
