@@ -96,7 +96,128 @@ const soal = [
     arti: "loker sepatu",
     opsi: ["loker sepatu", "lemari buku", "meja"],
     benar: 0
-  }
+  },
+   // ===== PERALATAN & PERLENGKAPAN SEKOLAH =====
+{
+  kanji: "本",
+  baca: "ほん",
+  romaji: "hon",
+  arti: "buku",
+  opsi: ["buku", "pensil", "tas"],
+  benar: 0
+},
+{
+  kanji: "教科書",
+  baca: "きょうかしょ",
+  romaji: "kyoukasho",
+  arti: "buku pelajaran",
+  opsi: ["buku cerita", "buku pelajaran", "kamus"],
+  benar: 1
+},
+{
+  kanji: "鉛筆",
+  baca: "えんぴつ",
+  romaji: "enpitsu",
+  arti: "pensil",
+  opsi: ["pena", "penghapus", "pensil"],
+  benar: 2
+},
+{
+  kanji: "消しゴム",
+  baca: "けしごむ",
+  romaji: "keshigomu",
+  arti: "penghapus",
+  opsi: ["penghapus", "penggaris", "pensil"],
+  benar: 0
+},
+{
+  kanji: "ノート",
+  baca: "のーと",
+  romaji: "nooto",
+  arti: "buku tulis",
+  opsi: ["buku tulis", "buku gambar", "map"],
+  benar: 0
+},
+{
+  kanji: "鞄",
+  baca: "かばん",
+  romaji: "kaban",
+  arti: "tas",
+  opsi: ["tas", "sepatu", "topi"],
+  benar: 0
+},
+{
+  kanji: "机",
+  baca: "つくえ",
+  romaji: "tsukue",
+  arti: "meja",
+  opsi: ["kursi", "lemari", "meja"],
+  benar: 2
+},
+{
+  kanji: "椅子",
+  baca: "いす",
+  romaji: "isu",
+  arti: "kursi",
+  opsi: ["meja", "kursi", "papan tulis"],
+  benar: 1
+},
+{
+  kanji: "黒板",
+  baca: "こくばん",
+  romaji: "kokuban",
+  arti: "papan tulis",
+  opsi: ["papan tulis", "jendela", "pintu"],
+  benar: 0
+},
+{
+  kanji: "時計",
+  baca: "とけい",
+  romaji: "tokei",
+  arti: "jam",
+  opsi: ["kalender", "jam", "bel"],
+  benar: 1
+},
+{
+  kanji: "地図",
+  baca: "ちず",
+  romaji: "chizu",
+  arti: "peta",
+  opsi: ["peta", "poster", "bendera"],
+  benar: 0
+},
+{
+  kanji: "筆箱",
+  baca: "ふでばこ",
+  romaji: "fudebako",
+  arti: "kotak pensil",
+  opsi: ["kotak makan", "kotak pensil", "tas"],
+  benar: 1
+},
+{
+  kanji: "定規",
+  baca: "じょうぎ",
+  romaji: "jougi",
+  arti: "penggaris",
+  opsi: ["gunting", "penggaris", "pensil"],
+  benar: 1
+},
+{
+  kanji: "鋏",
+  baca: "はさみ",
+  romaji: "hasami",
+  arti: "gunting",
+  opsi: ["lem", "gunting", "penghapus"],
+  benar: 1
+},
+{
+  kanji: "紙",
+  baca: "かみ",
+  romaji: "kami",
+  arti: "kertas",
+  opsi: ["kertas", "buku", "papan"],
+  benar: 0
+}
 ];
 
 /* =====================
